@@ -53,13 +53,13 @@ I’m usually reading about aviation, planning a city trip or looking for somewh
 
 ### Zürich departures
 
-Look down the left edge for the pairs of green lamps. They blink back and forth while the split flaps cycle through the evening departures. Give the board half a minute and you’ll see all 18 fictional flights pass through Zürich.
+Watch the green lamps beside **GATE OPEN**, **BOARDING** and **FINAL CALL**. The board cycles through 18 published Zürich departures in half a minute. Flight numbers and local departure times come from the SWISS timetable. The gates and remarks are illustrative.
 
 <p align="center">
-  <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich Airport departures board with two alternating green lamps beside each of six rows. Mechanical flaps cycle through three fictional schedules." />
+  <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich Airport departures board with two alternating green lamps beside each of six rows. Mechanical flaps cycle through three sample schedules." />
 </p>
 
-<p align="center"><sub><samp>ZRH / LSZH &nbsp; · &nbsp; FICTIONAL DEPARTURES</samp></sub></p>
+<p align="center"><sub><samp>ZRH / LSZH &nbsp; · &nbsp; TIMETABLE DEMO</samp></sub></p>
 
 <details>
 <summary><samp><b>OPEN README_2005.NFO</b></samp></summary>
