@@ -62,10 +62,10 @@ Aviation, city trips and Japan tend to find their way into my spare time. I have
 Five flights out of **Zürich**, in local time. When a flight leaves the list, watch the drums turn until the remaining flights have moved up and the new departure has taken its place. The green lamps switch sides once a second when the airport calls passengers to the gate.
 
 <p align="center">
-  <img src="./assets/splitflap-board.svg" width="100%" alt="Five upcoming Zürich departures. Each changed character flips into place, and green lamps mark flights calling passengers to the gate." />
+  <a href="https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures"><img src="./assets/splitflap-board.svg" width="100%" alt="Five upcoming Zürich departures. Each changed character flips into place, and green lamps mark flights calling passengers to the gate. Open the airport’s departure list." /></a>
 </p>
 
-`departures.exe` takes a snapshot of the airport feed on a ten-minute schedule. The timestamp above the flaps tells you when this copy was captured. Reload the page for the latest published board. For the airport’s current gate calls and the full timetable, [open Zürich departures](https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures).
+`departures.exe` checks Zürich Airport on a five-minute schedule. A new flight, gate change or boarding call updates the board as soon as a check sees it. **BOARD UPDATED** shows when the displayed information last changed, in Zürich time. GitHub can delay a check or serve a cached image. Reload the profile to pick up a newer board, or click the board for [the airport’s current departures](https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures).
 
 <details>
 <summary><samp><b>C:\ZRH&gt; TYPE README_2005.NFO</b></samp></summary>

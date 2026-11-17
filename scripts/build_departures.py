@@ -156,14 +156,17 @@ def build(rows, now):
     previous = [EMPTY] * 5
     if saved is not None:
         state = json.loads(saved.text)
-        age = now - timestamp(state["checked"])
+        last_change = timestamp(state["checked"])
+        if rows == state["rows"] and now.astimezone(ZURICH).date() == last_change.astimezone(ZURICH).date():
+            return
+        age = now - last_change
         if timedelta(0) <= age <= timedelta(minutes=45):
-            previous = state["before"] if rows == state["rows"] else state["rows"]
+            previous = state["rows"]
     state = {"before": previous, "rows": rows, "checked": now.isoformat()}
     stamp = now.astimezone(ZURICH).strftime("%d %b %Y · %H:%M %Z").upper()
     parts = [shell.rstrip(), MARKER, f'<metadata id="snapshot">{escape(json.dumps(state))}</metadata>',
              f'<text x="755" y="57" text-anchor="middle" fill="#c9c7bb" '
-             f'font-family="monospace" font-size="18">ZRH SNAPSHOT · {stamp}</text>']
+             f'font-family="monospace" font-size="18">BOARD UPDATED · {stamp}</text>']
     for row, (old, new) in enumerate(zip(previous, rows)):
         stops = []
         label = escape(" · ".join(filter(None, new)))
