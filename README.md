@@ -15,14 +15,11 @@ Grüezi! I’m **Manuel Frick**. I work in **Service Management & Operations**, 
 
 ## departures.exe
 
-Five upcoming departures from my home airport, in **Zürich local time**. Watch the pair of green lamps on the left. When the airport calls passengers to the gate, the lamps take turns lighting up. When a flight drops off the list, the flights behind it move up and a new destination clicks into the last row.
+Five upcoming departures from my home airport, in **Zürich local time**. Watch the pair of green lamps on the left. When the airport calls passengers to the gate, the lamps take turns lighting up. Each new snapshot makes room for the next flight as departures leave the list.
 
 <p align="center">
   <a href="https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures">
-    <picture>
-      <source media="(max-width: 767px)" srcset="./assets/splitflap-board-mobile.svg" />
-      <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich split-flap board showing five flights, departure times, gates and remarks. Open the airport’s current departure list." />
-    </picture>
+    <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich split-flap board showing five flights, departure times, gates and remarks. Open the airport’s current departure list." />
   </a>
 </p>
 
@@ -31,7 +28,7 @@ Five upcoming departures from my home airport, in **Zürich local time**. Watch 
 
 The updater checks Zürich Airport on a five-minute schedule. **BOARD UPDATED** gives the local time of the last published change. GitHub can delay a check or cache an image. Reload the profile to see a newer snapshot, or click the board for the airport’s current gate calls.
 
-When the image loads, all five rows flip into place. Watch the destination tiles closely and you’ll catch a six-spoke asterisk, digits and punctuation on their way to the next city. Once the letters settle, the board plays back the latest changes to the flight list. Each character has two faces and a hinge. The top half falls forward to reveal the next letter, and each drum stops when it reaches the right character. With reduced motion enabled, the letters appear in their final positions. The timing and alternating lamps were inspired by the [Frankfurt departures board](https://youtu.be/cj32w5z81Ak).
+When the image loads, all five rows flip into place. Watch the destination tiles closely and you’ll catch a six-spoke asterisk, digits and punctuation on their way to the next city. The five rows settle directly on the latest snapshot and stay there while the page is open. Each character has two faces and a hinge. The top half falls forward to reveal the next letter, and each drum stops when it reaches the right character. With reduced motion enabled, the letters appear in their final positions. The timing and alternating lamps were inspired by the [Frankfurt departures board](https://youtu.be/cj32w5z81Ak).
 
 </details>
 
@@ -48,7 +45,7 @@ The question I want a health check to answer is *“What should the next person 
 
 ## index.html
 
-My web workbench is **HTML, CSS, JavaScript and TypeScript**, with **JSON, YAML and SQL** for the data behind a page. This profile gave me a particularly good excuse to tinker. A single gate change on the board might leave four whole rows alone and send just one little drum spinning.
+My web workbench is **HTML, CSS, JavaScript and TypeScript**, with **JSON, YAML and SQL** for the data behind a page. This profile gave me a particularly good excuse to tinker. Every flap has a stopping point of its own. Pick a destination and you can watch the letters arrive one by one.
 
 I miss being able to right-click a personal homepage, choose **View Source**, and find the bit that made something move. You can do that here. The artwork is SVG, and the Python that turns the airport feed into flap positions lives alongside it. [View the board generator](./scripts/build_departures.py)
 
