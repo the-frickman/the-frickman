@@ -18,7 +18,12 @@ Grüezi! I’m **Manuel Frick**. I work in **Service Management & Operations**, 
 Five upcoming departures from my home airport, in **Zürich local time**. Watch the pair of green lamps on the left. When the airport calls passengers to the gate, the lamps take turns lighting up. When a flight drops off the list, the flights behind it move up and a new destination clicks into the last row.
 
 <p align="center">
-  <a href="https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures"><img src="./assets/splitflap-board.svg" width="100%" alt="Zürich split-flap board showing five flights, departure times, gates and remarks. Open the airport’s current departure list." /></a>
+  <a href="https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures">
+    <picture>
+      <source media="(max-width: 767px)" srcset="./assets/splitflap-board-mobile.svg" />
+      <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich split-flap board showing five flights, departure times, gates and remarks. Open the airport’s current departure list." />
+    </picture>
+  </a>
 </p>
 
 <details>
