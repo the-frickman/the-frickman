@@ -10,7 +10,7 @@ from scripts import build_departures as board
 
 
 class DeparturesAnimationTest(unittest.TestCase):
-    def test_settled_board_and_optional_replay_match_the_same_snapshot(self):
+    def test_opening_and_settled_board_match_the_same_snapshot(self):
         fields = ["LX  092", "BUENOS AIRES", "GRU", "22:35", "22:45", "E", "1",
                   "121-126", "E23", "BOARDING"]
         previous = [fields, *[board.EMPTY] * 4]

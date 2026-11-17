@@ -28,7 +28,7 @@ Five upcoming departures from my home airport, in **Zürich local time**. Watch 
 
 The updater checks Zürich Airport on a five-minute schedule. **BOARD UPDATED** gives the local time of the last published change. GitHub can delay a check or cache an image. Reload the profile to see a newer snapshot, or click the board for the airport’s current gate calls.
 
-The board opens with all five flights already in place. To see the drums turn, [replay the split-flap opening](https://raw.githubusercontent.com/the-frickman/the-frickman/main/assets/splitflap-board.svg#replay). Watch the destination tiles for the six-spoke asterisk as the letters fall into place. With reduced motion enabled, the replay also opens on the settled board. The mechanism and alternating lamps were inspired by the [Frankfurt departures board](https://youtu.be/cj32w5z81Ak).
+On each profile load the drums turn once, settle on the five flights in this snapshot and hold their positions. Watch the destination tiles for the six-spoke asterisk as the letters fall into place. With reduced motion enabled, the five flights appear immediately. The mechanism and alternating lamps were inspired by the [Frankfurt departures board](https://youtu.be/cj32w5z81Ak).
 
 </details>
 
