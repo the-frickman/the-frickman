@@ -53,10 +53,12 @@ I’m usually reading about aviation, planning a city trip or looking for somewh
 
 ### Zürich departures
 
-Watch the green lamps beside **GATE OPEN**, **BOARDING** and **FINAL CALL**. The board cycles through 18 published Zürich departures in half a minute. Flight numbers and local departure times come from the SWISS timetable. The gates and remarks are illustrative.
+Watch the first row. When its flight shows **DEPARTED**, the five flights below it flip up one row and a new departure appears at the bottom. The green lamps alternate once a second for **GATE OPEN**, **BOARDING** and **FINAL CALL**.
+
+The board uses 18 published SWISS flight numbers and local departure times from Zürich. Each flight keeps its own destination, dock, check-in area, counter range and gate as it moves. The gates, estimates and other operations details are illustrative. All the selected routes are nonstop, so the *via* column stays empty.
 
 <p align="center">
-  <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich Airport departures board with two alternating green lamps beside each of six rows. Mechanical flaps cycle through three sample schedules." />
+  <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich Airport departures board with two alternating green lamps beside each of six rows. As flights depart, the remaining entries move up and a new flight appears below them." />
 </p>
 
 <p align="center"><sub><samp>ZRH / LSZH &nbsp; · &nbsp; TIMETABLE DEMO</samp></sub></p>
