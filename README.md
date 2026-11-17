@@ -1,108 +1,41 @@
-<!-- Early-internet energy; modern tools. All original graphics, stored locally in this repository. -->
-
 <p align="center">
-  <img src="./assets/manuel-frick-airport.png" width="100%" alt="Manuel Frick: Manuel Frick pixel-art header: detailed airliner over an Alpine airport at sunset with retro pixel typography" />
+  <img src="./assets/manuel-frick-airport.svg" width="100%" alt="Manuel Frick · The-Frickman.exe · Cloud, Ops and Automation. A pixel-art airliner climbs over an Alpine runway at dusk." />
 </p>
 
-<p align="center">
-  <samp><b>WELCOME TO MY LITTLE CORNER OF THE INTERNET</b></samp><br/>
-  <sub><samp>EST. IN THE ERA OF FORUMS, PIXEL FONTS &amp; PERSONAL HOME PAGES</samp></sub>
-</p>
+# Manuel Frick
+
+I work in **Service Management & Operations** in Zürich, Switzerland. I spend most of my time making Microsoft 365, cloud infrastructure and Modern Workplace easier to run. My favourite thing to automate is the task someone has to remember to do every week.
 
 <p align="center">
-  <a href="#01--whoami"><img src="./assets/webbuttons/powershell.svg" width="238" height="88" alt="A retro window for PowerShell and automation" /></a>
-  <a href="#02--toolkitini"><img src="./assets/webbuttons/web.svg" width="238" height="88" alt="A retro window for web development" /></a>
-  <a href="#04--after_hours"><img src="./assets/webbuttons/aviation.svg" width="238" height="88" alt="A retro window for aviation" /></a>
+  <a href="#cloud-and-automation"><img src="./assets/webbuttons/powershell.svg" width="238" alt="Cloud and automation" /></a>
+  <a href="#web-and-integrations"><img src="./assets/webbuttons/web.svg" width="238" alt="Web and integrations" /></a>
+  <a href="#after-hours"><img src="./assets/webbuttons/aviation.svg" width="238" alt="After hours" /></a>
 </p>
 
-<p align="center">
-  <code>MANUEL.EXE</code> &nbsp; · &nbsp; <code>@the-frickman</code> &nbsp; · &nbsp; <code>ZRH / LSZH</code>
-</p>
+## Cloud and automation
+
+**PowerShell** is where I start when a problem keeps coming back. I use it with **Microsoft Graph** and other APIs to turn repeatable work into scripts, workflows and health checks.
+
+| Area | What I work with |
+| :--- | :--- |
+| Modern Workplace | Microsoft 365, Azure, Entra ID and Intune |
+| Endpoint operations | Windows, macOS, identity and security |
+| Service management | ITSM, System Center Service Manager and improving day-to-day service workflows |
+
+## Web and integrations
+
+I build small web projects and tools with **HTML, CSS, JavaScript and TypeScript**. On the integration side, I work with **APIs, JSON, YAML and SQL**. I like getting a tool down to the few steps someone needs to use it.
 
 <img src="./assets/skyline-divider.svg" width="100%" alt="" />
 
-### `01 // whoami`
+## After hours
 
-Hey, I'm **Manuel**. I work in **Service Management & Operations**, with a focus on **Microsoft 365, cloud infrastructure, Modern Workplace and automation**.
+I’m usually reading about aviation, planning a city trip or looking for somewhere new to explore in Japan. I also miss the personal sites and pixel-art forum signatures of the early web. That’s where the idea for this little Zürich departures hall came from.
 
-I enjoy making complicated systems simpler: tidying up operations, replacing manual routines with dependable scripts, and building tools people actually want to use. My default troubleshooting tool is **PowerShell**. My default daydream involves an airport.
-
-```text
-C:\> WHOAMI
-
-  NAME       Manuel Frick
-  HOME BASE  Zurich, Switzerland (ZRH / LSZH)
-  FOCUS      Service Operations / M365 / Modern Workplace
-  MISSION    Simplify > Automate > Improve
-  MODE       Curious by default
-
-  [=========================] SYSTEM ONLINE
-```
-
-### `02 // toolkit.ini`
-
-| Category | Technologies and tools |
-| :--- | :--- |
-| **`automation.ps1`** | PowerShell, Microsoft Graph, scripting, APIs and workflow automation |
-| **`frontend.html`** | HTML, CSS, JavaScript, TypeScript |
-| **`cloud.config`** | Microsoft 365, Azure, Entra ID, Intune |
-| **`systems.sys`** | Windows, macOS, endpoints, identity and security |
-| **`operations.log`** | ITSM, SCSM, service management and operational improvements |
-| **`data.json`** | JSON, YAML, SQL and API integrations |
-
-*Practical engineering over buzzwords. Good design over another dashboard.*
-
-### `03 // spoken_languages.cfg`
-
-| Language | Level |
-| :--- | :--- |
-| **German** | Native |
-| **English** | Fluent (C1) |
-| **Dutch** | Conversational |
-| **Japanese** | Learning |
-
-<img src="./assets/skyline-divider.svg" width="100%" alt="" />
-
-### `04 // after_hours`
-
-Away from tenants, endpoints and scripts, I'm usually exploring **aviation**, planning a city trip, discovering a corner of **Japan**, or experimenting with a side project.
-
-I also miss the era of personal websites, guestbooks, lovingly designed forum signatures and weirdly specific pixel art. This profile is my little tribute to that internet - minus the autoplay MIDI.
-
-### `05 // currently_loading`
-
-- Better tooling for **service operations** and repeatable health checks
-- Practical **PowerShell** and Microsoft 365 automation
-- Building and refining **web projects**
-- The next airport, the next idea, the next rabbit hole
-
-<details>
-<summary><b>📁 Open README_2005.nfo</b></summary>
-
-```text
-+---------------------------------------------------------+
-|  WELCOME, INTERNET TRAVELLER!                            |
-|                                                         |
-|  Best viewed with curiosity and a healthy dose          |
-|  of early-2000s nostalgia.                               |
-|                                                         |
-|  [x] Pixel art                  [x] No visitor counter  |
-|  [x] Retro web windows          [x] No autoplay MIDI    |
-|  [x] Animated departures board  [x] No JavaScript       |
-|                                                         |
-|  Thanks for stopping by. See you at the gate!            |
-+---------------------------------------------------------+
-```
-
-</details>
-
----
+I speak **German** (native), **English** (C1) and conversational **Dutch**, and I’m learning **Japanese**.
 
 <p align="center">
-  <img src="./assets/splitflap-board.svg" width="100%" alt="Animated vintage airport departures board with actual split-flap transitions between fictional example destinations, times, gates and flight statuses" />
+  <img src="./assets/splitflap-board.svg" width="100%" alt="Animated Zürich departures board with mechanical split flaps, showing fictional flights, destinations, times, gates and remarks." />
 </p>
 
-<p align="center">
-  <sub><samp>THIS BOARD IS AN ANIMATED ILLUSTRATION, NOT LIVE FLIGHT DATA.</samp></sub><br/>
-  <sub><samp>PURE SVG · NO JAVASCRIPT · BUILT WITH CODE, CURIOSITY &amp; NOSTALGIA · <a href="https://frick.tech">FRICK.TECH</a></samp></sub>
-</p>
+<p align="center"><sub>Fictional departures · <a href="https://frick.tech">frick.tech</a></sub></p>

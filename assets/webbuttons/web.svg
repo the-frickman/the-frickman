@@ -1,16 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="238" height="88" viewBox="0 0 238 88" role="img" aria-label="WEB + CODE: HTML / CSS / TS">
- <defs><linearGradient id="night" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#0a1836"/><stop offset=".65" stop-color="#26335e"/><stop offset="1" stop-color="#513e62"/></linearGradient></defs>
- <rect x="0" y="0" width="238" height="88" rx="3" fill="#071124"/>
- <rect x="2" y="2" width="234" height="84" rx="2" fill="url(#night)" stroke="#426181" stroke-width="2"/>
- <rect x="4" y="4" width="230" height="18" fill="#122344"/>
- <rect x="5" y="21" width="228" height="1" fill="#a16c92" opacity=".7"/>
- <rect x="10" y="11" width="5" height="5" fill="#ff988c"/><rect x="19" y="11" width="5" height="5" fill="#f4d0a1"/><rect x="28" y="11" width="5" height="5" fill="#82d9c8"/>
- <text x="218" y="16" text-anchor="end" font-family="monospace" font-size="8" letter-spacing="1.2" fill="#a8bbd6">APP_02</text>
- <path d="M5 77 L37 72 L61 75 L102 68 L138 73 L184 66 L234 73 L234 84 L5 84Z" fill="#0d2141"/>
- <rect x="3" y="83" width="231" height="3" fill="#c78282" opacity=".4"/>
- <rect x="15" y="30" width="48" height="42" rx="2" fill="#12233f" stroke="#95b4e4" stroke-width="2"/><rect x="17" y="33" width="44" height="7" fill="#665a90"/><rect x="21" y="36" width="3" height="3" fill="#ffab8b"/><rect x="27" y="36" width="3" height="3" fill="#f9d1a6"/><rect x="33" y="36" width="3" height="3" fill="#8ce4cf"/><path d="M31 49l-7 7 7 7 M44 49l7 7-7 7 M41 47l-6 18" fill="none" stroke="#f7d4d5" stroke-width="3"/>
- <text x="75" y="43" font-family="monospace" font-weight="bold" font-size="16" letter-spacing=".7" fill="#f8e7dc">WEB + CODE</text>
- <text x="76" y="57" font-family="monospace" font-size="10" letter-spacing=".5" fill="#a6c6df">HTML / CSS / TS</text>
- <rect x="76" y="65" width="5" height="5" fill="#73e7c7"/>
- <text x="86" y="71" font-family="monospace" font-size="9" letter-spacing=".8" fill="#f5c39d">BUILDING</text>
- </svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="314" height="92" viewBox="-5 -4 314 92" role="img" aria-labelledby="title desc">
+  <title id="title">Web &amp; APIs</title>
+  <desc id="desc">Go to web and integrations</desc>
+  <defs>
+    <linearGradient id="metal" x2="0" y2="1">
+      <stop stop-color="#263b54"/><stop offset="1" stop-color="#101a2b"/>
+    </linearGradient>
+    <linearGradient id="enamel" x2="0" y2="1">
+      <stop stop-color="#d5caee"/><stop offset="1" stop-color="#9f97cb"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="302" height="82" rx="6" fill="url(#metal)" stroke="#677990" stroke-width="2"/>
+  <rect x="5" y="5" width="294" height="74" rx="3" fill="none" stroke="#0a1320"/>
+  <path d="M8 8h288" stroke="#a7bcce" stroke-opacity=".26"/>
+  <path d="M8 75h288" stroke="#d5caee" stroke-opacity=".34"/>
+  <rect x="17" y="17" width="50" height="50" rx="2" fill="url(#enamel)"/>
+  <path d="M19 19h46" stroke="#fff" stroke-opacity=".55"/>
+  <path d="M19 65h46" stroke="#142235" stroke-opacity=".26"/>
+  <path d="M34 33l-8 9 8 9m16-18 8 9-8 9m-5-20-6 22" fill="none" stroke="#142235" stroke-width="3.2" stroke-linecap="square"/>
+  <g aria-label="Web &amp; APIs" fill="#f8f2e7" transform="translate(82 50) scale(0.01172 -0.01172)"><path transform="translate(0 0)" d="M55 1493H387L619 408L850 1493H1184L1414 408L1646 1493H1976L1659 0H1259L1015 1135L774 0H374Z"/><path transform="translate(2033 0)" d="M1161 563V461H408Q419 335 489.5 272.0Q560 209 686 209Q788 209 894.5 242.5Q1001 276 1113 344V68Q999 20 884.5 -4.5Q770 -29 656 -29Q382 -29 230.5 125.5Q79 280 79 559Q79 833 228.0 990.0Q377 1147 638 1147Q876 1147 1018.5 988.0Q1161 829 1161 563ZM830 682Q830 784 776.5 846.5Q723 909 636 909Q543 909 484.5 850.5Q426 792 411 682Z"/><path transform="translate(3283 0)" d="M691 231Q795 231 849.5 315.0Q904 399 904 559Q904 719 849.5 803.0Q795 887 691 887Q588 887 532.5 802.5Q477 718 477 559Q477 400 532.5 315.5Q588 231 691 231ZM477 956Q544 1054 625.0 1100.5Q706 1147 811 1147Q997 1147 1117.0 982.5Q1237 818 1237 559Q1237 300 1117.0 135.5Q997 -29 811 -29Q706 -29 625.0 17.5Q544 64 477 162V0H155V1556H477Z"/><path transform="translate(5243 0)" d="M719 991 1087 541Q1135 611 1159.5 698.0Q1184 785 1189 895H1469Q1455 713 1405.0 571.0Q1355 429 1266 322L1530 0H1148L1060 109Q966 39 861.5 5.0Q757 -29 640 -29Q403 -29 257.0 109.5Q111 248 111 467Q111 613 175.0 725.5Q239 838 385 944Q347 997 329.0 1050.0Q311 1103 311 1161Q311 1324 425.5 1422.0Q540 1520 730 1520Q812 1520 900.5 1505.5Q989 1491 1085 1462V1184Q1001 1232 925.5 1255.0Q850 1278 778 1278Q708 1278 670.0 1248.5Q632 1219 632 1165Q632 1131 654.0 1087.5Q676 1044 719 991ZM540 743Q482 696 452.0 636.5Q422 577 422 506Q422 391 498.5 310.0Q575 229 682 229Q742 229 794.5 249.5Q847 270 892 311Z"/><path transform="translate(7491 0)" d="M985 272H443L357 0H9L507 1493H920L1418 0H1069ZM529 549H897L714 1143Z"/><path transform="translate(8917 0)" d="M169 1493H744Q1001 1493 1138.0 1366.5Q1275 1240 1275 1006Q1275 771 1138.0 644.5Q1001 518 744 518H516V0H169ZM516 1214V797H707Q808 797 863.0 851.5Q918 906 918 1006Q918 1106 863.0 1160.0Q808 1214 707 1214Z"/><path transform="translate(10267 0)" d="M169 1493H516V0H169Z"/><path transform="translate(10952 0)" d="M942 1085V813Q839 861 742.5 885.0Q646 909 561 909Q469 909 424.5 883.5Q380 858 380 805Q380 762 413.5 739.0Q447 716 535 705L591 696Q839 661 924.5 581.0Q1010 501 1010 330Q1010 151 891.0 61.0Q772 -29 536 -29Q436 -29 329.5 -11.5Q223 6 111 41V313Q207 261 308.5 235.0Q410 209 514 209Q608 209 656.0 238.0Q704 267 704 324Q704 372 671.0 395.5Q638 419 540 432L483 440Q268 470 181.5 551.0Q95 632 95 797Q95 975 205.0 1061.0Q315 1147 542 1147Q631 1147 729.0 1132.0Q827 1117 942 1085Z"/></g>
+  <path d="M251 26v32" stroke="#586b80"/>
+  <path d="M266 42h15m-6-6 6 6-6 6" fill="none" stroke="#d5caee" stroke-width="2.3"/>
+</svg>
