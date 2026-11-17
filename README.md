@@ -59,13 +59,13 @@ Aviation, city trips and Japan tend to find their way into my spare time. I have
 
 ### departures.exe
 
-Watch the top flight reach **DEPARTED**. The five flights underneath flip up a row, and a new one takes the last slot. Each pair of green lamps alternates once a second beside **GATE OPEN**, **BOARDING** and **FINAL CALL**.
+Five flights out of **Zürich**, in local time. When a flight leaves the list, watch the drums turn until the remaining flights have moved up and the new departure has taken its place. The green lamps switch sides once a second when the airport calls passengers to the gate.
 
 <p align="center">
-  <img src="./assets/splitflap-board.svg" width="100%" alt="Animated Zürich departures. Six rows of split flaps show a rolling queue of flights with green boarding indicators." />
+  <img src="./assets/splitflap-board.svg" width="100%" alt="Five upcoming Zürich departures. Each changed character flips into place, and green lamps mark flights calling passengers to the gate." />
 </p>
 
-The board cycles through **18 published SWISS flight numbers and local departure times**. Each flight carries its own destination, dock, check-in area, counter range and gate up the board. The estimates and operations details are illustrative. All 18 routes are nonstop, which is why the *via* column is empty.
+`departures.exe` takes a snapshot of the airport feed on a ten-minute schedule. The timestamp above the flaps tells you when this copy was captured. Reload the page for the latest published board. For the airport’s current gate calls and the full timetable, [open Zürich departures](https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures).
 
 <details>
 <summary><samp><b>C:\ZRH&gt; TYPE README_2005.NFO</b></samp></summary>

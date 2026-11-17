@@ -1,77 +1,83 @@
-"""Rebuild the standalone Zürich split-flap SVG with Python's standard library."""
+"""Generate a self-contained split-flap snapshot from Zürich Airport's public feed."""
 
+import json
+import re
+import unicodedata
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from string import ascii_uppercase, digits
+from urllib.request import urlopen
+from xml.etree import ElementTree
 from xml.sax.saxutils import escape
+from zoneinfo import ZoneInfo
 
 BOARD = Path(__file__).resolve().parents[1] / "assets" / "splitflap-board.svg"
+FEED = "https://flightdata.flughafen-zuerich.ch/flights"
+ZURICH = ZoneInfo("Europe/Zurich")
 MARKER = "  <!-- BEGIN GENERATED DEPARTURES -->"
-# Number, destination and local departure time come from SWISS's ZRH route timetables.
-# Gate, desk range and delay are sample operations data. All services here are nonstop.
-# time, destination, flight, gate, check-in area, counter range, delay (minutes)
-FLIGHTS = [
-    ("07:00", "FRANKFURT", "LX3608", "A62", "1", "121-126", 0),
-    ("07:05", "LONDON LHR", "LX316", "D43", "1", "121-126", 0),
-    ("07:10", "ROME FCO", "LX1726", "A63", "1", "121-126", 0),
-    ("07:15", "AMSTERDAM", "LX724", "A74", "3", "301-306", 0),
-    ("07:20", "MUNICH", "LX3624", "A67", "1", "121-126", 10),
-    ("07:25", "PARIS CDG", "LX632", "A82", "3", "301-306", 0),
-    ("12:20", "COPENHAGEN", "LX1270", "A72", "1", "121-126", 0),
-    ("12:35", "LISBON", "LX2084", "A73", "3", "301-306", 0),
-    ("12:40", "VIENNA", "LX3534", "B33", "1", "121-126", 0),
-    ("12:45", "BERLIN", "LX966", "A71", "3", "301-306", 15),
-    ("13:05", "TOKYO NARITA", "LX160", "E46", "1", "111-116", 0),
-    ("13:10", "NEW YORK JFK", "LX14", "E53", "1", "111-116", 0),
-    ("20:45", "AMSTERDAM", "LX736", "A64", "1", "121-126", 0),
-    ("20:50", "VIENNA", "LX3558", "B39", "3", "301-306", 0),
-    ("20:55", "PARIS CDG", "LX646", "A72", "1", "121-126", 0),
-    ("21:05", "BERLIN", "LX962", "A83", "3", "301-306", 15),
-    ("22:30", "HONG KONG", "LX138", "E42", "1", "111-116", 0),
-    ("22:35", "SINGAPORE", "LX176", "E56", "1", "111-116", 0),
-]
 COLUMNS = ((51, 7), (222, 13), (518, 3), (597, 5), (719, 5),
            (848, 1), (910, 1), (1008, 7), (1177, 3), (1260, 10))
-ROW_COUNT = 6
-INTERVAL = 10  # seconds of illustration per departure
-CYCLE = INTERVAL * len(FLIGHTS)
-STEP = 1 / 16  # approximately two frames per character in the 29.97 fps close-up
-ATTENTION = {"FINAL CALL", "BOARDING", "GATE OPEN"}
+EMPTY = [""] * len(COLUMNS)
+STEP = 1 / (16 * 0.60)
+CHANGE = 8 * STEP
+CYCLE = 6  # One transition, then hold the new state.
+ATTENTION = {"BOARDING", "GO TO GATE", "GATE OPEN", "FINAL CALL", "LAST CALL"}
 
 
-def minutes(hhmm):
-    hour, minute = map(int, hhmm.split(":"))
-    return 60 * hour + minute
+def timestamp(value):
+    return datetime.fromisoformat(value.replace("Z", "+00:00")) if value else None
 
 
-def fields(index, row, departed):
-    time, city, flight, gate, area, desks, delay = FLIGHTS[(index + row) % len(FLIGHTS)]
-    ahead = (minutes(time) - minutes(FLIGHTS[index][0])) % 1440
-    estimate = ""
-    if delay:
-        hour, minute = divmod((minutes(time) + delay) % 1440, 60)
-        estimate = f"{hour:02}:{minute:02}"
-    if row == 0:
-        remark = "DEPARTED" if departed else "FINAL CALL"
-    elif delay:
-        remark = "DELAYED"
-    elif row == 1 and ahead <= 35:
-        remark = "BOARDING"
-    elif row < 4 and ahead <= 50:
-        remark = "GATE OPEN"
-    else:
-        remark = "ON TIME"
-    return (f"{flight[:2]} {flight[2:]:>4}", city, "", time, estimate,
-            gate[0], area, desks, gate, remark)
+def lettering(value):
+    letters = unicodedata.normalize("NFKD", str(value or "").upper())
+    return re.sub(r"[^ A-Z0-9*./:-]", "", letters)
 
 
-def row_history(row):
-    history = [(0, fields(0, row, False))]
-    for index in range(len(FLIGHTS)):
-        base = index * INTERVAL
-        if row == 0:
-            history.append((base + 1.5, fields(index, row, True)))
-        history.append((base + 5.5, fields((index + 1) % len(FLIGHTS), row, False)))
-    return history
+def next_departures(feed, now):
+    airports = {f.get("airportName"): f["PDS"] for f in feed
+                if f.get("airportName") and re.fullmatch("[A-Z]{3}", f.get("PDS") or "")}
+    upcoming = []
+    for f in feed:
+        if f.get("flightType") != "D" or not f.get("isCommercial") or f.get("ATD"):
+            continue
+        status = lettering(f.get("statusTextEn"))
+        if status in {"DEPARTED", "CANCELLED", "CANCELED", "ROLLING", "AIRBORNE"}:
+            continue
+        scheduled, estimated = timestamp(f.get("STD")), timestamp(f.get("ETD"))
+        due = estimated or scheduled
+        grace = timedelta(minutes=20) if status in ATTENTION or status == "CLOSED" else timedelta()
+        if not scheduled or not now - grace <= due < now + timedelta(days=1):
+            continue
+        carrier, number = lettering(f.get("FLC")), lettering(f.get("FLN"))
+        if not carrier or not number:
+            continue
+        city = lettering(f.get("cityEn"))
+        if len(city) > 13 or not city:
+            city = lettering(f.get("PDS")) or city[:13]
+        gate = lettering(f.get("GAT"))
+        # The airport announces when a gate will be published before calling passengers.
+        if status.startswith("GATE INFO AT "):
+            remark = "INFO " + status[-5:]
+            gate = ""
+        else:
+            remark = status or "SCHEDULED"
+        values = [f"{carrier} {number:>4}", city, airports.get(f.get("viaAirportName"), ""),
+                  scheduled.astimezone(ZURICH).strftime("%H:%M"),
+                  estimated.astimezone(ZURICH).strftime("%H:%M") if estimated else "",
+                  gate[:1] if gate[:1].isalpha() else "", lettering(f.get("CAM")), "",
+                  gate, remark]
+        upcoming.append((due, scheduled, carrier, number, values))
+    rows, seen = [], set()
+    for _, scheduled, carrier, number, values in sorted(upcoming):
+        key = (scheduled, carrier, number)
+        if key not in seen:
+            rows.append([v[:width] for v, (_, width) in zip(values, COLUMNS)])
+            seen.add(key)
+        if len(rows) == 5:
+            break
+    if not rows:
+        raise ValueError("No upcoming commercial departures in feed. Keeping last snapshot.")
+    return rows + [EMPTY] * (5 - len(rows))
 
 
 def ref(char):
@@ -79,22 +85,21 @@ def ref(char):
 
 
 def discrete(attribute, events):
-    """SMIL samples stay constant between keys, including at the loop boundary."""
+    """Hold each face until the next key, then leave the final face visible."""
     times = ";".join(f"{time / CYCLE:.6f}".rstrip("0").rstrip(".") for time, _ in events)
     values = ";".join(str(value) for _, value in events)
     return (f'<animate attributeName="{attribute}" calcMode="discrete" dur="{CYCLE}s" '
-            f'keyTimes="{times}" values="{values}" repeatCount="indefinite"/>')
+            f'keyTimes="{times}" values="{values}" fill="freeze"/>')
 
 
 def print_track(name, events):
-    return f'<use id="{name}" href="{events[0][1]}">{discrete("href", events)}</use>'
+    return f'<use id="{name}" href="{events[-1][1]}">{discrete("href", events)}</use>'
 
 
-def motor(tile_id, x, row, track, bounds):
+def motor(tile_id, x, row, first, goal, stops):
     """A released card exposes the next top and turns into the next bottom."""
-    first = track[0][1]
-    chars = {char for _, char in track}
-    if len(chars) == 1:
+    chars = {first, goal}
+    if first == goal:
         return f'<use href="{ref(first)}"/>' if first != " " else ""
     alphabet = " " + ascii_uppercase + digits + "*-./:"
     if chars <= set(digits + " :"):
@@ -105,39 +110,35 @@ def motor(tile_id, x, row, track, bounds):
     top = [(0, ref(first))]
     bottom = [(0, ref(first))]
     moving = [(0, 0)]
-    old = first
-    for change, goal in track[1:]:
-        count = (alphabet.index(goal) - alphabet.index(old)) % len(alphabet)
-        if not count:
-            continue
-        start = change + phase
-        stop = start + STEP * count
-        earliest, latest = bounds.get(change, (start, stop))
-        bounds[change] = min(start, earliest), max(stop, latest)
-        moving.extend(((start, 1), (stop, 0)))
-        for step in range(count):
-            old = alphabet[(alphabet.index(old) + 1) % len(alphabet)]
-            top.append((start + step * STEP, ref(old)))
-            bottom.append((start + (step + 1) * STEP, ref(old)))
+    index = alphabet.index(first)
+    count = (alphabet.index(goal) - index) % len(alphabet)
+    start = CHANGE + phase
+    stop = start + STEP * count
+    stops.append(stop)
+    moving.extend(((start, 1), (stop, 0)))
+    for step in range(count):
+        exposed = ref(alphabet[(index + step + 1) % len(alphabet)])
+        top.append((start + step * STEP, exposed))
+        bottom.append((start + (step + 1) * STEP, exposed))
     for events in (top, bottom, moving):
-        events.append((CYCLE, events[0][1]))
+        events.append((CYCLE, events[-1][1]))
     a, b = tile_id + "t", tile_id + "b"
-    return f'''<g class="rest-face"><use href="{ref(first)}"/></g>
+    return f'''<g class="rest-face"><use href="{ref(goal)}"/></g>
 <g class="animated-face">
   <defs>{print_track(a, top)}{print_track(b, bottom)}</defs>
   <g clip-path="url(#top-clip)"><use href="#{a}"/></g>
   <g clip-path="url(#bottom-clip)"><use href="#{b}"/></g>
   <g opacity="0">{discrete("opacity", moving)}
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="{STEP}s" begin="{phase:.6f}s" repeatCount="indefinite"
+      <animateTransform attributeName="transform" type="scale" dur="{STEP}s" begin="{start:.6f}s" end="{stop:.6f}s" repeatCount="indefinite"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="{phase:.6f}s" dur="{STEP}s" repeatCount="indefinite" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="{start:.6f}s" dur="{STEP}s" end="{stop:.6f}s" repeatCount="indefinite" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#{b}"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="{phase:.6f}s" dur="{STEP}s" repeatCount="indefinite" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="{start:.6f}s" dur="{STEP}s" end="{stop:.6f}s" repeatCount="indefinite" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#{a}"/>
         </g>
       </g>
@@ -146,45 +147,51 @@ def motor(tile_id, x, row, track, bounds):
 </g>'''
 
 
-def lamps(row, history, bounds):
-    first = int(history[0][1][-1] in ATTENTION)
-    schedule = [(0, first)]
-    for change, data in history[1:]:
-        if change in bounds:
-            start, stop = bounds[change]
-            schedule.extend(((start, 0), (stop, int(data[-1] in ATTENTION))))
-    schedule.append((CYCLE, first))
-    steady = '<use class="rest-face" href="#attention-pair"/>' if first else ""
-    return (f'<g transform="translate(27 {163.4 + 43*row:.1f})"><use href="#dark-pair"/>{steady}'
-            f'<g class="motion-lamps" opacity="{first}"><use href="#attention-pair"/>'
-            f'{discrete("opacity", schedule)}</g></g>')
-
-
-def build():
-    shell, marker, _ = BOARD.read_text().partition(MARKER)
+def build(rows, now):
+    old_svg = BOARD.read_text()
+    shell, marker, _ = old_svg.partition(MARKER)
     if not marker:
         raise ValueError("SVG artwork is missing its departures marker")
-    parts = [shell.rstrip(), MARKER]
-    for row in range(ROW_COUNT):
-        history = row_history(row)
-        bounds = {}
-        label = escape(" · ".join(filter(None, history[0][1])))
+    saved = ElementTree.fromstring(old_svg).find("{*}metadata[@id='snapshot']")
+    previous = [EMPTY] * 5
+    if saved is not None:
+        state = json.loads(saved.text)
+        age = now - timestamp(state["checked"])
+        if timedelta(0) <= age <= timedelta(minutes=45):
+            previous = state["before"] if rows == state["rows"] else state["rows"]
+    state = {"before": previous, "rows": rows, "checked": now.isoformat()}
+    stamp = now.astimezone(ZURICH).strftime("%d %b %Y · %H:%M %Z").upper()
+    parts = [shell.rstrip(), MARKER, f'<metadata id="snapshot">{escape(json.dumps(state))}</metadata>',
+             f'<text x="755" y="57" text-anchor="middle" fill="#c9c7bb" '
+             f'font-family="monospace" font-size="18">ZRH SNAPSHOT · {stamp}</text>']
+    for row, (old, new) in enumerate(zip(previous, rows)):
+        stops = []
+        label = escape(" · ".join(filter(None, new)))
         parts.append(f'<g data-row="{row}" aria-label="{label}" fill="#f8f5e9" '
                      f'transform="translate(0 {143 + 43*row}) scale(1 .68)">')
         for field, (x, width) in enumerate(COLUMNS):
-            values = [(time, data[field].ljust(width)) for time, data in history]
-            if any(len(value) != width for _, value in values):
-                raise ValueError(f"Field {field} exceeds its {width} flap slots")
-            for i in range(width):
+            for i, (before, after) in enumerate(zip(old[field].ljust(width), new[field].ljust(width))):
                 pos = x + 22*i
-                track = [(time, value[i]) for time, value in values]
-                face = motor(f"r{row}x{pos}", pos, row, track, bounds)
+                face = motor(f"r{row}x{pos}", pos, row, before, after, stops)
                 parts.append(f'<g transform="translate({pos} 0)"><use href="#tile"/>'
                              f'{face}<use href="#seam"/></g>')
-        parts.extend(("</g>", lamps(row, history, bounds)))
+        parts.append(f'</g><g transform="translate(27 {163.4 + 43*row:.1f})"><use href="#dark-pair"/>')
+        if new[-1] in ATTENTION:
+            parts.append('<use class="rest-face" href="#attention-pair"/>')
+        if stops:
+            start, stop = CHANGE, max(stops)
+            lamp_events = [(0, int(old[-1] in ATTENTION)), (start, 0), (stop, int(new[-1] in ATTENTION))]
+            parts.append(f'<g class="motion-lamps" opacity="{int(new[-1] in ATTENTION)}">'
+                         f'{discrete("opacity", lamp_events)}<use href="#attention-pair"/></g>')
+        elif new[-1] in ATTENTION:
+            parts.append('<use class="motion-lamps" href="#attention-pair"/>')
+        parts.append("</g>")
     parts.append("</svg>\n")
     BOARD.write_text("\n".join(parts))
 
 
 if __name__ == "__main__":
-    build()
+    with urlopen(FEED, timeout=30) as response:
+        flights = json.load(response)
+    checked = datetime.now(timezone.utc)
+    build(next_departures(flights, checked), checked)
