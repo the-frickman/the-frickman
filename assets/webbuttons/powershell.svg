@@ -1,23 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="314" height="92" viewBox="-5 -4 314 92" role="img" aria-labelledby="title desc">
-  <title id="title">Automation</title>
-  <desc id="desc">Go to cloud and automation</desc>
-  <defs>
-    <linearGradient id="metal" x2="0" y2="1">
-      <stop stop-color="#263b54"/><stop offset="1" stop-color="#101a2b"/>
-    </linearGradient>
-    <linearGradient id="enamel" x2="0" y2="1">
-      <stop stop-color="#b6e0ce"/><stop offset="1" stop-color="#7cb8a9"/>
-    </linearGradient>
-  </defs>
-  <rect x="1" y="1" width="302" height="82" rx="6" fill="url(#metal)" stroke="#677990" stroke-width="2"/>
-  <rect x="5" y="5" width="294" height="74" rx="3" fill="none" stroke="#0a1320"/>
-  <path d="M8 8h288" stroke="#a7bcce" stroke-opacity=".26"/>
-  <path d="M8 75h288" stroke="#b6e0ce" stroke-opacity=".34"/>
-  <rect x="17" y="17" width="50" height="50" rx="2" fill="url(#enamel)"/>
-  <path d="M19 19h46" stroke="#fff" stroke-opacity=".55"/>
-  <path d="M19 65h46" stroke="#142235" stroke-opacity=".26"/>
-  <path d="M29 32l10 10-10 10m15 0h12" fill="none" stroke="#142235" stroke-width="3.2" stroke-linecap="square"/>
-  <g aria-label="Automation" fill="#f8f2e7" transform="translate(82 50) scale(0.01172 -0.01172)"><path transform="translate(0 0)" d="M985 272H443L357 0H9L507 1493H920L1418 0H1069ZM529 549H897L714 1143Z"/><path transform="translate(1426 0)" d="M144 436V1120H468V1008Q468 917 467.0 779.5Q466 642 466 596Q466 461 472.5 401.5Q479 342 494 315Q514 280 546.0 261.0Q578 242 619 242Q720 242 777.5 328.0Q835 414 835 567V1120H1157V0H835V162Q762 64 680.5 17.5Q599 -29 501 -29Q327 -29 235.5 90.0Q144 209 144 436Z"/><path transform="translate(2738 0)" d="M507 1438V1120H839V864H507V389Q507 311 534.5 283.5Q562 256 645 256H811V0H535Q344 0 264.0 88.5Q184 177 184 389V864H24V1120H184V1438Z"/><path transform="translate(3619 0)" d="M634 891Q527 891 471.0 805.5Q415 720 415 559Q415 398 471.0 312.5Q527 227 634 227Q740 227 795.5 312.5Q851 398 851 559Q851 720 795.5 805.5Q740 891 634 891ZM634 1147Q895 1147 1041.0 991.0Q1187 835 1187 559Q1187 283 1041.0 127.0Q895 -29 634 -29Q374 -29 226.5 127.0Q79 283 79 559Q79 835 226.5 991.0Q374 1147 634 1147Z"/><path transform="translate(4885 0)" d="M1089 934Q1150 1038 1234.0 1092.5Q1318 1147 1419 1147Q1593 1147 1684.0 1028.0Q1775 909 1775 682V0H1451V584Q1452 597 1452.5 611.0Q1453 625 1453 651Q1453 770 1421.5 823.5Q1390 877 1319 877Q1228 877 1178.0 793.0Q1128 709 1126 550V0H802V584Q802 770 773.0 823.5Q744 877 670 877Q578 877 527.5 792.5Q477 708 477 551V0H153V1120H477V956Q536 1051 613.0 1099.0Q690 1147 783 1147Q887 1147 967.5 1091.0Q1048 1035 1089 934Z"/><path transform="translate(6805 0)" d="M607 504Q506 504 455.0 466.0Q404 428 404 354Q404 286 445.0 247.5Q486 209 559 209Q650 209 712.0 281.5Q774 354 774 463V504ZM1099 639V0H774V166Q709 64 628.0 17.5Q547 -29 431 -29Q274 -29 176.5 72.5Q79 174 79 336Q79 533 201.0 625.0Q323 717 584 717H774V745Q774 830 713.5 869.5Q653 909 526 909Q422 909 333.0 886.0Q244 863 167 817V1090Q271 1118 375.5 1132.5Q480 1147 584 1147Q857 1147 978.0 1027.5Q1099 908 1099 639Z"/><path transform="translate(8048 0)" d="M507 1438V1120H839V864H507V389Q507 311 534.5 283.5Q562 256 645 256H811V0H535Q344 0 264.0 88.5Q184 177 184 389V864H24V1120H184V1438Z"/><path transform="translate(8929 0)" d="M155 1120H477V0H155ZM155 1556H477V1264H155Z"/><path transform="translate(9560 0)" d="M634 891Q527 891 471.0 805.5Q415 720 415 559Q415 398 471.0 312.5Q527 227 634 227Q740 227 795.5 312.5Q851 398 851 559Q851 720 795.5 805.5Q740 891 634 891ZM634 1147Q895 1147 1041.0 991.0Q1187 835 1187 559Q1187 283 1041.0 127.0Q895 -29 634 -29Q374 -29 226.5 127.0Q79 283 79 559Q79 835 226.5 991.0Q374 1147 634 1147Z"/><path transform="translate(10826 0)" d="M1168 682V0H844V111V522Q844 667 838.0 722.0Q832 777 818 803Q799 838 766.5 857.5Q734 877 693 877Q592 877 534.5 790.5Q477 704 477 551V0H155V1120H477V956Q550 1054 632.0 1100.5Q714 1147 813 1147Q987 1147 1077.5 1028.0Q1168 909 1168 682Z"/></g>
-  <path d="M251 26v32" stroke="#586b80"/>
-  <path d="M266 42h15m-6-6 6 6-6 6" fill="none" stroke="#b6e0ce" stroke-width="2.3"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="238" height="88" viewBox="0 0 238 88" role="img" aria-label="POWERSHELL: SCRIPTS + OPS">
+ <defs><linearGradient id="night" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#0a1836"/><stop offset=".65" stop-color="#26335e"/><stop offset="1" stop-color="#513e62"/></linearGradient></defs>
+ <rect x="0" y="0" width="238" height="88" rx="3" fill="#071124"/>
+ <rect x="2" y="2" width="234" height="84" rx="2" fill="url(#night)" stroke="#426181" stroke-width="2"/>
+ <rect x="4" y="4" width="230" height="18" fill="#122344"/>
+ <rect x="5" y="21" width="228" height="1" fill="#a16c92" opacity=".7"/>
+ <rect x="10" y="11" width="5" height="5" fill="#ff988c"/><rect x="19" y="11" width="5" height="5" fill="#f4d0a1"/><rect x="28" y="11" width="5" height="5" fill="#82d9c8"/>
+ <text x="218" y="16" text-anchor="end" font-family="monospace" font-size="8" letter-spacing="1.2" fill="#a8bbd6">APP_01</text>
+ <path d="M5 77 L37 72 L61 75 L102 68 L138 73 L184 66 L234 73 L234 84 L5 84Z" fill="#0d2141"/>
+ <rect x="3" y="83" width="231" height="3" fill="#c78282" opacity=".4"/>
+ <rect x="15" y="30" width="47" height="42" rx="3" fill="#0d213e" stroke="#82b8d8" stroke-width="2"/><rect x="18" y="33" width="41" height="7" fill="#365880"/><path d="M24 48l11 7-11 7" stroke="#8cffdc" stroke-width="3" fill="none" stroke-linejoin="miter"/><rect x="38" y="61" width="12" height="3" fill="#c1deee"/>
+ <text x="75" y="43" font-family="monospace" font-weight="bold" font-size="16" letter-spacing=".7" fill="#f8e7dc">POWERSHELL</text>
+ <text x="76" y="57" font-family="monospace" font-size="10" letter-spacing=".5" fill="#a6c6df">SCRIPTS + OPS</text>
+ <rect x="76" y="65" width="5" height="5" fill="#73e7c7"/>
+ <text x="86" y="71" font-family="monospace" font-size="9" letter-spacing=".8" fill="#f5c39d">AUTOMATION</text>
+ </svg>
