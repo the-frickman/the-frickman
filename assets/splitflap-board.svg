@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1514" height="383" viewBox="0 0 1514 383" role="img" aria-labelledby="title desc">
+<svg id="replay" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1514" height="383" viewBox="0 0 1514 383" role="img" aria-labelledby="title desc">
   <title id="title">Departures · Zürich</title>
   <desc id="desc">Five upcoming commercial departures from Zürich Airport. Times are local to Zürich. Green lamps identify flights calling passengers to the gate.</desc>
   <!-- Forward-indexed drums based on the two-sided flap mechanism in US10699605B1. -->
   <style>
-    .rest-face { display: none }
+    .animated-face, .motion-lamps { display: none }
+    @media (prefers-reduced-motion: no-preference) {
+      #replay:target .rest-face { display: none }
+      #replay:target .animated-face, #replay:target .motion-lamps { display: inline }
+    }
     @media (prefers-reduced-motion: reduce) {
-      .animated-face, .motion-lamps, .lamp-shade { display: none }
-      .rest-face { display: inline }
+      .lamp-shade { display: none }
     }
   </style>
   <defs>
