@@ -32,10 +32,9 @@ FLIGHTS = [
 COLUMNS = ((51, 7), (222, 13), (518, 3), (597, 5), (719, 5),
            (848, 1), (910, 1), (1008, 7), (1177, 3), (1260, 10))
 ROW_COUNT = 6
-PLAYBACK_RATE = 2
-INTERVAL = 10 / PLAYBACK_RATE  # seconds of illustration per departure
+INTERVAL = 10  # seconds of illustration per departure
 CYCLE = INTERVAL * len(FLIGHTS)
-STEP = 1 / (16 * PLAYBACK_RATE)  # Frankfurt reference cadence is about 16 flaps/s
+STEP = 1 / 16  # approximately two frames per character in the 29.97 fps close-up
 ATTENTION = {"FINAL CALL", "BOARDING", "GATE OPEN"}
 
 
@@ -70,8 +69,8 @@ def row_history(row):
     for index in range(len(FLIGHTS)):
         base = index * INTERVAL
         if row == 0:
-            history.append((base + 1.5 / PLAYBACK_RATE, fields(index, row, True)))
-        history.append((base + 5.5 / PLAYBACK_RATE, fields((index + 1) % len(FLIGHTS), row, False)))
+            history.append((base + 1.5, fields(index, row, True)))
+        history.append((base + 5.5, fields((index + 1) % len(FLIGHTS), row, False)))
     return history
 
 
