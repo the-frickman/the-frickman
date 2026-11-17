@@ -1,108 +1,84 @@
-<!-- Early-internet energy; modern tools. All original graphics, stored locally in this repository. -->
-
 <p align="center">
-  <img src="./assets/manuel-frick-airport.png" width="100%" alt="Manuel Frick: Manuel Frick pixel-art header: detailed airliner over an Alpine airport at sunset with retro pixel typography" />
+  <img src="./assets/manuel-frick-airport.svg" width="100%" alt="Manuel Frick. A pixel-art airliner climbs over a Zürich runway and the Alps at dusk." />
 </p>
 
-<p align="center">
-  <samp><b>WELCOME TO MY LITTLE CORNER OF THE INTERNET</b></samp><br/>
-  <sub><samp>EST. IN THE ERA OF FORUMS, PIXEL FONTS &amp; PERSONAL HOME PAGES</samp></sub>
-</p>
+<h1 align="center"><samp>the-frickman.exe</samp></h1>
+<p align="center"><samp>Manuel’s personal homepage &nbsp;·&nbsp; Zürich, Switzerland</samp></p>
+
+Grüezi! I’m **Manuel Frick**. I work in **Service Management & Operations**, mostly around Microsoft 365, endpoints and the scripts that keep a service desk moving. After hours, my browser tabs tend to fill up with city maps, Japanese vocabulary and airport timetables. One of those timetables found its way onto this page.
 
 <p align="center">
-  <a href="#01--whoami"><img src="./assets/webbuttons/powershell.svg" width="238" height="88" alt="A retro window for PowerShell and automation" /></a>
-  <a href="#02--toolkitini"><img src="./assets/webbuttons/web.svg" width="238" height="88" alt="A retro window for web development" /></a>
-  <a href="#04--after_hours"><img src="./assets/webbuttons/aviation.svg" width="238" height="88" alt="A retro window for aviation" /></a>
+  <a href="#operationscmd"><img src="./assets/webbuttons/powershell.svg" width="238" alt="PowerShell · Jump to the operations desk" /></a>
+  <a href="#indexhtml"><img src="./assets/webbuttons/web.svg" width="238" alt="Web and code · Jump to the web workbench" /></a>
+  <a href="#departuresexe"><img src="./assets/webbuttons/aviation.svg" width="238" alt="Aviation · Jump to the Zürich departures board" /></a>
 </p>
+
+## departures.exe
+
+Five upcoming departures from my home airport, in **Zürich local time**. Watch the pair of green lamps on the left. When the airport calls passengers to the gate, the lamps take turns lighting up. When a flight drops off the list, the flights behind it move up and a new destination clicks into the last row.
 
 <p align="center">
-  <code>MANUEL.EXE</code> &nbsp; · &nbsp; <code>@the-frickman</code> &nbsp; · &nbsp; <code>ZRH / LSZH</code>
+  <a href="https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures"><img src="./assets/splitflap-board.svg" width="100%" alt="Zürich split-flap board showing five flights, departure times, gates and remarks. Open the airport’s current departure list." /></a>
 </p>
-
-<img src="./assets/skyline-divider.svg" width="100%" alt="" />
-
-### `01 // whoami`
-
-Hey, I'm **Manuel**. I work in **Service Management & Operations**, with a focus on **Microsoft 365, cloud infrastructure, Modern Workplace and automation**.
-
-I enjoy making complicated systems simpler: tidying up operations, replacing manual routines with dependable scripts, and building tools people actually want to use. My default troubleshooting tool is **PowerShell**. My default daydream involves an airport.
-
-```text
-C:\> WHOAMI
-
-  NAME       Manuel Frick
-  HOME BASE  Zurich, Switzerland (ZRH / LSZH)
-  FOCUS      Service Operations / M365 / Modern Workplace
-  MISSION    Simplify > Automate > Improve
-  MODE       Curious by default
-
-  [=========================] SYSTEM ONLINE
-```
-
-### `02 // toolkit.ini`
-
-| Category | Technologies and tools |
-| :--- | :--- |
-| **`automation.ps1`** | PowerShell, Microsoft Graph, scripting, APIs and workflow automation |
-| **`frontend.html`** | HTML, CSS, JavaScript, TypeScript |
-| **`cloud.config`** | Microsoft 365, Azure, Entra ID, Intune |
-| **`systems.sys`** | Windows, macOS, endpoints, identity and security |
-| **`operations.log`** | ITSM, SCSM, service management and operational improvements |
-| **`data.json`** | JSON, YAML, SQL and API integrations |
-
-*Practical engineering over buzzwords. Good design over another dashboard.*
-
-### `03 // spoken_languages.cfg`
-
-| Language | Level |
-| :--- | :--- |
-| **German** | Native |
-| **English** | Fluent (C1) |
-| **Dutch** | Conversational |
-| **Japanese** | Learning |
-
-<img src="./assets/skyline-divider.svg" width="100%" alt="" />
-
-### `04 // after_hours`
-
-Away from tenants, endpoints and scripts, I'm usually exploring **aviation**, planning a city trip, discovering a corner of **Japan**, or experimenting with a side project.
-
-I also miss the era of personal websites, guestbooks, lovingly designed forum signatures and weirdly specific pixel art. This profile is my little tribute to that internet - minus the autoplay MIDI.
-
-### `05 // currently_loading`
-
-- Better tooling for **service operations** and repeatable health checks
-- Practical **PowerShell** and Microsoft 365 automation
-- Building and refining **web projects**
-- The next airport, the next idea, the next rabbit hole
 
 <details>
-<summary><b>📁 Open README_2005.nfo</b></summary>
+<summary><samp>F1 · How fresh is the board?</samp></summary>
 
-```text
-+---------------------------------------------------------+
-|  WELCOME, INTERNET TRAVELLER!                            |
-|                                                         |
-|  Best viewed with curiosity and a healthy dose          |
-|  of early-2000s nostalgia.                               |
-|                                                         |
-|  [x] Pixel art                  [x] No visitor counter  |
-|  [x] Retro web windows          [x] No autoplay MIDI    |
-|  [x] Animated departures board  [x] No JavaScript       |
-|                                                         |
-|  Thanks for stopping by. See you at the gate!            |
-+---------------------------------------------------------+
-```
+The updater checks Zürich Airport on a five-minute schedule. **BOARD UPDATED** gives the local time of the last published change. GitHub can delay a check or cache an image. Reload the profile to see a newer snapshot, or click the board for the airport’s current gate calls.
+
+Each character has two faces and a hinge. The top half falls forward to reveal the next letter, and each drum stops when it reaches the right character. With reduced motion enabled, the letters appear in their final positions. The timing and alternating lamps were inspired by the [Frankfurt departures board](https://youtu.be/cj32w5z81Ak).
 
 </details>
 
----
+## operations.cmd
 
-<p align="center">
-  <img src="./assets/splitflap-board.svg" width="100%" alt="Animated vintage airport departures board with actual split-flap transitions between fictional example destinations, times, gates and flight statuses" />
-</p>
+The question I want a health check to answer is *“What should the next person on shift do with this?”* A red light tells someone to look. A device name, a timestamp and the check that failed give them somewhere to start.
 
-<p align="center">
-  <sub><samp>THIS BOARD IS AN ANIMATED ILLUSTRATION, NOT LIVE FLIGHT DATA.</samp></sub><br/>
-  <sub><samp>PURE SVG · NO JAVASCRIPT · BUILT WITH CODE, CURIOSITY &amp; NOSTALGIA · <a href="https://frick.tech">FRICK.TECH</a></samp></sub>
-</p>
+| At the desk | What I reach for |
+| --- | --- |
+| Repeating the same tenant check | PowerShell, Microsoft Graph and APIs |
+| Tracking down a sign-in or device issue | Entra ID, Intune, Windows and macOS |
+| Looking after workplace services | Microsoft 365 and Azure |
+| Handing an incident to the next shift | ITSM, System Center Service Manager and a short account of what I’ve already tried |
+
+## index.html
+
+My web workbench is **HTML, CSS, JavaScript and TypeScript**, with **JSON, YAML and SQL** for the data behind a page. This profile gave me a particularly good excuse to tinker. A single gate change on the board might leave four whole rows alone and send just one little drum spinning.
+
+I miss being able to right-click a personal homepage, choose **View Source**, and find the bit that made something move. You can do that here. The artwork is SVG, and the Python that turns the airport feed into flap positions lives alongside it. [View the board generator](./scripts/build_departures.py)
+
+## profile.ini
+
+```ini
+[home]
+handle  = the-frickman
+city    = Zürich
+airport = ZRH / LSZH
+
+[languages]
+German   = native
+English  = fluent (C1)
+Dutch    = conversational
+Japanese = learning
+```
+
+Away from the desk I’m into aviation, city trips and Japan. Give me a window seat and I’ll happily spend part of the flight matching the view outside to a map.
+
+## favorites.htm
+
+Every good personal homepage had a little folder of links worth keeping. Here’s mine.
+
+- **Homepage** — my own address on the web. [frick.tech](https://frick.tech)
+- **At the airport** — the full departure list, including flights beyond the five on this page. [Zürich Airport](https://www.flughafen-zuerich.ch/en/passengers/fly/flightinformation/departures)
+- **Behind the board** — open the latest run to see when the updater checked in. [Departures workflow](https://github.com/the-frickman/the-frickman/actions/workflows/departures.yml)
+
+<details>
+<summary><samp>C:\ZRH&gt; TYPE README_2005.NFO</samp></summary>
+
+Remember the MSN Messenger away message that was really a song lyric? Or finding a whole new corner of the web through an 88×31 button in somebody’s sidebar? That’s the bit of the 2000s I wanted to bring here. A small page, a few doors to open, and one gloriously specific thing the webmaster spent far too long getting right.
+
+In this case, it was the blink on the left of the board. Thanks for stopping by. See you at the gate!
+
+</details>
+
+<p align="center"><samp>[ <a href="#the-frickmanexe">back to top</a> ] &nbsp;·&nbsp; [ <a href="https://frick.tech">home</a> ]</samp></p>
