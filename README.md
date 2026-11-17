@@ -2,9 +2,14 @@
   <img src="./assets/manuel-frick-airport.svg" width="100%" alt="Manuel Frick · The-Frickman.exe. A pixel-art airliner climbs over an Alpine runway at dusk." />
 </p>
 
-# Manuel Frick
+<p align="center"><samp><b>THE-FRICKMAN.EXE</b> &nbsp; // &nbsp; PERSONAL HOMEPAGE</samp></p>
 
-Hey, I’m Manuel. I work in **Service Management & Operations** in Zürich, Switzerland. I like using **PowerShell** to turn recurring Microsoft 365 and Modern Workplace chores into scripts people can pick up and run.
+```dos
+C:\ZRH> whoami
+Manuel Frick  /  Service Management & Operations
+```
+
+Welcome to my corner of the web. I’m based in **Zürich, Switzerland**. I like using **PowerShell** to turn recurring Microsoft 365 and Modern Workplace chores into scripts people can pick up and run.
 
 <p align="center">
   <a href="#cloud-and-automation"><img src="./assets/webbuttons/powershell.svg" width="238" alt="PowerShell · Cloud and automation" /></a>
@@ -20,12 +25,21 @@ PowerShell and Microsoft Graph for health checks and workflows. Microsoft 365, A
 
 Small web projects with HTML, CSS, JavaScript and TypeScript. APIs, JSON, YAML and SQL for connecting them to the rest of the stack.
 
+<img src="./assets/skyline-divider.svg" width="100%" alt="" />
+
 ## After hours
 
 Aviation, city trips, Japan and a soft spot for the early web. I speak German (native), English (C1) and conversational Dutch, and I’m learning Japanese.
 
 <p align="center">
-  <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich split-flap departures board showing six fictional flights. Changed characters cycle through their drums one flap at a time." />
+  <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich Airport departures. Six rows of mechanical flaps cycle through three schedules with 18 fictional flights." />
 </p>
+
+<details>
+<summary><samp>Open README_2005.NFO</samp></summary>
+
+I miss finding a personal homepage through a forum signature and following its links late into the evening. The little app windows and pixel-art runway are my way of keeping a bit of that web around.
+
+</details>
 
 <p align="center"><sub><samp>FICTIONAL DEPARTURES &nbsp; · &nbsp; <a href="https://frick.tech">FRICK.TECH</a></samp></sub></p>
