@@ -26,7 +26,7 @@ Five upcoming departures from my home airport, in **Zürich local time**. Watch 
 
 The updater checks Zürich Airport on a five-minute schedule. **BOARD UPDATED** gives the local time of the last published change. GitHub can delay a check or cache an image. Reload the profile to see a newer snapshot, or click the board for the airport’s current gate calls.
 
-When the image loads, all five rows flip into place. Once the letters settle, the board plays back the latest changes to the flight list. Each character has two faces and a hinge. The top half falls forward to reveal the next letter, and each drum stops when it reaches the right character. With reduced motion enabled, the letters appear in their final positions. The timing and alternating lamps were inspired by the [Frankfurt departures board](https://youtu.be/cj32w5z81Ak).
+When the image loads, all five rows flip into place. Watch the destination tiles closely and you’ll catch a six-spoke asterisk, digits and punctuation on their way to the next city. Once the letters settle, the board plays back the latest changes to the flight list. Each character has two faces and a hinge. The top half falls forward to reveal the next letter, and each drum stops when it reaches the right character. With reduced motion enabled, the letters appear in their final positions. The timing and alternating lamps were inspired by the [Frankfurt departures board](https://youtu.be/cj32w5z81Ak).
 
 </details>
 

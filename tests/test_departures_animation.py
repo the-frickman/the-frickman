@@ -32,7 +32,7 @@ class DeparturesAnimationTest(unittest.TestCase):
         root = ElementTree.fromstring(rendered)
         self.assertEqual(json.loads(root.find("{*}metadata").text)["checked"], saved["checked"])
         cells = iter(root.find("{*}g[@data-row='0']"))
-        for old, new, (_, width) in zip(previous[0], current[0], board.COLUMNS):
+        for field, (old, new, (_, width)) in enumerate(zip(previous[0], current[0], board.COLUMNS)):
             for first, final in zip(old.ljust(width), new.ljust(width)):
                 cell = next(cells)
                 tracks = cell.findall(".//{*}defs/{*}use/{*}animate")
@@ -47,3 +47,8 @@ class DeparturesAnimationTest(unittest.TestCase):
                     self.assertEqual([face for t, face in zip(times, faces) if t < board.UPDATE - board.STEP / 2][-1],
                                      board.ref(first))
                     self.assertEqual(faces[-1], board.ref(final))
+                    if field in (1, 2) and first.isalpha():
+                        for symbol in "9*:-./":
+                            self.assertIn(board.ref(symbol), faces[:faces.index(board.ref(first))])
+                    elif field in (3, 4):
+                        self.assertNotIn(board.ref("*"), faces)
