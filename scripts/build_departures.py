@@ -207,57 +207,61 @@ def build_desktop(rows, now):
     BOARD.write_text("\n".join(parts))
 
 
-# Each tuple positions the same desktop field in one of two lines per flight.
-MOBILE_FIELDS = (
-    ("Flight", 45, 0), ("Destination", 215, 0), ("Via", 26, 76),
-    ("Scheduled", 518, 0), ("Estimate", 109, 76), ("Pier", 232, 76),
-    ("Area", 281, 76), ("Counter", 334, 76), ("Gate", 648, 0),
-    ("Remarks", 500, 76),
-)
-
-
 def build_mobile():
-    """Reposition the published cells so both images share every face and motor tick."""
-    svg = "http://www.w3.org/2000/svg"
-    ElementTree.register_namespace("", svg)
+    """Fold the desktop artwork after Scheduled, preserving its bilingual signs."""
+    ElementTree.register_namespace("", "http://www.w3.org/2000/svg")
     ElementTree.register_namespace("xlink", "http://www.w3.org/1999/xlink")
     root = ElementTree.parse(BOARD).getroot()
-    root.attrib.update(width="736", height="1008", viewBox="0 0 736 1008")
+    width, height = 816, 1110
+    desktop_width = int(root.get("width"))
+    root.attrib.update(width=str(width), height=str(height), viewBox=f"0 0 {width} {height}")
+    for bezel in root.findall("{*}rect")[:2]:
+        bezel.set("width", str(width - 2 * int(bezel.get("x"))))
+        bezel.set("height", str(height - 2 * int(bezel.get("y"))))
+
+    # Move the airport wordmark and its Swiss flag as one piece.
+    artwork = list(root)
+    badge_start = artwork.index(root.find("{*}g[@aria-label='ZÜRICH AIRPORT']"))
+    headings_start = artwork.index(root.find("{*}g[@aria-label='Flug']"))
+    badge = ElementTree.Element("g", transform=f"translate({width - desktop_width} 0)")
+    for piece in artwork[badge_start:headings_start]:
+        root.remove(piece)
+        badge.append(piece)
+    root.insert(badge_start, badge)
+    root.find("{*}text").attrib.update(x=str(width // 2), y="99")
+
+    # Reuse both rows of outlined lettering, including the desktop underline.
+    rule = root.find("{*}path[@stroke]")
+    headings = artwork[headings_start:artwork.index(rule)]
+    root.remove(rule)
+    rule.set("d", f"M28 134.5h{width - 58}")
     defs = root.find("{*}defs")
-    snapshot = root.find("{*}metadata")
-    # Keep the common artwork and motors. Replace the wide bezel and headings.
-    children = list(root)
-    for node in children[children.index(defs) + 1:children.index(snapshot)]:
-        root.remove(node)
-    header = ElementTree.fromstring('''<g font-family="Arial, sans-serif">
-      <rect x="1" y="1" width="734" height="1006" rx="15" fill="url(#rim)"/>
-      <rect x="6" y="6" width="724" height="996" rx="10" fill="#181817" stroke="#aaa69a"/>
-      <rect x="24" y="22" width="45" height="45" rx="5" fill="#ffdc27"/>
-      <path transform="translate(29 26)" fill="#171716"
-            d="m4 22 2-2 7 2 6-6L8 9l3-3 14 6 6-6c1.7-1.7 3.5-2 4.6-.9 1.1 1.1.7 2.9-.9 4.6l-6 6 6 14-3 3-7-11-6 6 2 7-2 2-5-9z"/>
-      <text x="82" y="59" fill="#ffdc27" font-size="43" font-weight="bold">Departures</text>
-      <text x="708" y="55" text-anchor="end" fill="#f8f5e9" font-size="26">Zürich · ZRH</text>
-    </g>''')
-    root.insert(list(root).index(snapshot), header)
-    stamp = root.find("{*}text")
-    stamp.attrib.update(x="26", y="92", **{"text-anchor": "start", "font-size": "19"})
-    labels = ElementTree.SubElement(defs, "g", id="mobile-labels", fill="#ffdc27",
-                                    attrib={"font-family": "Arial, sans-serif", "font-size": "20"})
-    for name, x, line in MOBILE_FIELDS:
-        ElementTree.SubElement(labels, "text", x=str(x), y=str(line - 8)).text = name
+    signs = ElementTree.SubElement(defs, "g", id="mobile-signs")
+    second_line = ElementTree.Element("g", transform="translate(-688 92)")
+    for column, (german, english) in enumerate(zip(headings[::2], headings[1::2], strict=True)):
+        group = signs if column < 4 else second_line
+        for label in (german, english):
+            root.remove(label)
+            group.append(label)
+    signs.append(second_line)
+    rule.tail = "\n"
+    rule.set("id", "mobile-rule")
+    signs.append(rule)
+    ElementTree.SubElement(signs, "use", href="#mobile-rule", transform="translate(0 92)")
+
     for index, row in enumerate(root.findall("{*}g[@data-row]")):
-        y = 147 + 177 * index
+        offset = 31 + 195 * index
         row_index = list(root).index(row)
         lamps = root[row_index + 1]
-        lamps.set("transform", f"translate(26 {y + 23.4})")
-        root.insert(row_index, ElementTree.Element("path", d=f"M24 {y-39}h688", stroke="#55544f"))
-        root.insert(row_index + 1, ElementTree.Element("use", href="#mobile-labels",
-                                                      transform=f"translate(0 {y})"))
-        row.set("transform", f"translate(0 {y})")
+        lamps.set("transform", f"translate(27 {163.4 + offset:.1f})")
+        root.insert(row_index, ElementTree.Element("use", href="#mobile-signs",
+                                                  transform=f"translate(0 {offset})"))
+        row.set("transform", f"translate(0 {143 + offset})")
         cells = iter(row)
-        for (_, width), (_, x, line) in zip(COLUMNS, MOBILE_FIELDS):
-            for letter in range(width):
-                next(cells).set("transform", f"translate({x + 22*letter} {line}) scale(1 .78)")
+        for field, (x, count) in enumerate(COLUMNS):
+            left, top = (x, 0) if field < 4 else (x - 688, 92)
+            for letter in range(count):
+                next(cells).set("transform", f"translate({left + 22*letter} {top}) scale(1 .68)")
     mobile = BOARD.with_name("splitflap-board-mobile.svg")
     artwork = ElementTree.tostring(root, encoding="utf-8") + b"\n"
     if not mobile.exists() or mobile.read_bytes() != artwork:

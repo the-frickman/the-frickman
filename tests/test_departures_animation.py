@@ -38,6 +38,14 @@ class DeparturesAnimationTest(unittest.TestCase):
         mobile = ElementTree.fromstring(portrait)
         self.assertEqual(mobile.find("{*}metadata").text, root.find("{*}metadata").text)
         self.assertGreater(int(mobile.get("height")), int(mobile.get("width")))
+        # The portrait uses the exact header and bilingual glyph paths from the landscape.
+        def signs(svg):
+            return {g.get("aria-label"): ElementTree.tostring(g).strip()
+                    for g in svg.findall(".//{*}g[@aria-label]") if g.get("data-row") is None}
+        self.assertEqual(signs(mobile), signs(root))
+        self.assertEqual(mobile.find("{*}text").text, root.find("{*}text").text)
+        self.assertEqual([t.text for t in mobile.findall(".//{*}text")],
+                         [t.text for t in root.findall(".//{*}text")])
         for desktop_row, mobile_row in zip(root.findall("{*}g[@data-row]"), mobile.findall("{*}g[@data-row]"), strict=True):
             self.assertEqual(desktop_row.get("aria-label"), mobile_row.get("aria-label"))
             for wide, narrow in zip(desktop_row, mobile_row, strict=True):
