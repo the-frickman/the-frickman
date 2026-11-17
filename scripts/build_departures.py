@@ -98,12 +98,18 @@ def print_track(name, events):
     return f'<use id="{name}" href="{events[-1][1]}">{discrete("href", events)}</use>'
 
 
-def motor(tile_id, x, row, first, goal, stops):
+def motor(tile_id, x, row, first, goal, stops, *, place_name):
     """A released card exposes the next top and turns into the next bottom."""
     if first == goal == " ":
         return ""
     alphabet = " " + ascii_uppercase + digits + "*-./:"
-    if {first, goal} <= set(digits + " :"):
+    opening = OPENING
+    if place_name:
+        # The Frankfurt close-up shows numerals, an asterisk and punctuation
+        # passing through destination cells as their drums seek the next name.
+        alphabet = " " + digits + "*:-./" + ascii_uppercase
+        opening += ((x + 3 * row) % 9) * STEP
+    elif {first, goal} <= set(digits + " :"):
         alphabet = " " + digits + (":" if ":" in (first, goal) else "")
 
     phase = ((x + 3 * row) % 7) * STEP / 12
@@ -116,7 +122,7 @@ def motor(tile_id, x, row, first, goal, stops):
         count = (target_index - index) % len(alphabet)
         if not count:
             continue
-        start = change + phase
+        start = (opening if change == OPENING else change) + phase
         stop = start + STEP * count
         stops[change] = max(stops.get(change, 0), stop)
         moving.extend(((start, 1), (stop, 0)))
@@ -163,14 +169,14 @@ def build(rows, now):
         state = json.loads(saved.text)
         last_change = timestamp(state["checked"])
         if rows == state["rows"] and now.astimezone(ZURICH).date() == last_change.astimezone(ZURICH).date():
-            if state.get("opening_flip"):
+            if state.get("drum_revision") == 2:
                 return
             # Upgrade the existing SVG even when the airport data hasn't changed.
             previous = state["before"] if any(any(row) for row in state["before"]) else rows
             now = last_change
         elif timedelta(0) <= now - last_change <= timedelta(minutes=45):
             previous = state["rows"]
-    state = {"before": previous, "rows": rows, "checked": now.isoformat(), "opening_flip": True}
+    state = {"before": previous, "rows": rows, "checked": now.isoformat(), "drum_revision": 2}
     stamp = now.astimezone(ZURICH).strftime("%d %b %Y · %H:%M %Z").upper()
     parts = [shell.rstrip(), MARKER, f'<metadata id="snapshot">{escape(json.dumps(state))}</metadata>',
              f'<text x="755" y="57" text-anchor="middle" fill="#c9c7bb" '
@@ -183,7 +189,7 @@ def build(rows, now):
         for field, (x, width) in enumerate(COLUMNS):
             for i, (before, after) in enumerate(zip(old[field].ljust(width), new[field].ljust(width))):
                 pos = x + 22*i
-                face = motor(f"r{row}x{pos}", pos, row, before, after, stops)
+                face = motor(f"r{row}x{pos}", pos, row, before, after, stops, place_name=field in (1, 2))
                 parts.append(f'<g transform="translate({pos} 0)"><use href="#tile"/>'
                              f'{face}<use href="#seam"/></g>')
         parts.append(f'</g><g transform="translate(27 {163.4 + 43*row:.1f})"><use href="#dark-pair"/>')
