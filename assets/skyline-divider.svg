@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="40" viewBox="0 0 1024 40" role="img" aria-label="Decorative alpine runway at blue hour">
+<defs><linearGradient id="dusky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#091c40"/><stop offset=".7" stop-color="#354070"/><stop offset="1" stop-color="#b47182"/></linearGradient></defs>
+<rect width="1024" height="40" fill="url(#dusky)"/>
+<path d="M0 33 L89 30 L139 21 L159 26 L211 19 L236 27 L292 29 L340 18 L372 25 L418 29 L502 17 L533 24 L574 22 L632 32 L694 19 L724 25 L769 28 L816 11 L850 26 L902 23 L951 16 L1024 29 L1024 40 L0 40Z" fill="#152e57"/>
+<path d="M490 20 L502 17 L517 22 M808 19 L816 11 L833 24 M133 26 L139 21 L150 25" fill="none" stroke="#d6b4c0" stroke-width="2"/>
+<path d="M0 37 L1024 37" stroke="#152949" stroke-width="5"/>
+<path d="M0 37 L1024 37" stroke="#b16f80" stroke-width="1" opacity=".6"/>
+<rect x="37" y="35" width="6" height="2" fill="#f6bf86"/><rect x="92" y="35" width="4" height="2" fill="#ffe2a7"/><rect x="179" y="35" width="5" height="2" fill="#ffbf80"/><rect x="362" y="35" width="6" height="2" fill="#f1ca9a"/><rect x="680" y="35" width="5" height="2" fill="#ffd19a"/><rect x="843" y="35" width="6" height="2" fill="#ffd8ac"/><rect x="952" y="35" width="5" height="2" fill="#f4b38c"/>
+</svg>
