@@ -5,8 +5,8 @@
   <style>
     .animated-face, .motion-lamps { display: none }
     @media (prefers-reduced-motion: no-preference) {
-      #replay:target .rest-face { display: none }
-      #replay:target .animated-face, #replay:target .motion-lamps { display: inline }
+      .rest-face { display: none }
+      .animated-face, .motion-lamps { display: inline }
     }
     @media (prefers-reduced-motion: reduce) {
       .lamp-shade { display: none }
