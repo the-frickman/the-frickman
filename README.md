@@ -1,7 +1,7 @@
 <!-- Early-internet energy; modern tools. All original graphics, stored locally in this repository. -->
 
 <p align="center">
-  <img src="./assets/hero-airliner.svg" width="100%" alt="Manuel Frick: a recognisable twin-engine commercial airliner with swept wings and mounted turbofans climbing over the Alps at twilight, with navy-blue skies and coral sunset" />
+  <img src="./assets/manuel-frick-airport.png" width="100%" alt="Manuel Frick: Manuel Frick pixel-art header: detailed airliner over an Alpine airport at sunset with retro pixel typography" />
 </p>
 
 <p align="center">
