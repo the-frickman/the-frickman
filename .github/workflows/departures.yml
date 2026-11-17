@@ -24,7 +24,7 @@ jobs:
         run: python3 scripts/build_departures.py
       - name: Publish the board
         run: |
-          git add -- assets/splitflap-board.svg
+          git add -- assets/splitflap-board.svg assets/splitflap-board-mobile.svg
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

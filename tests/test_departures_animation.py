@@ -26,11 +26,23 @@ class DeparturesAnimationTest(unittest.TestCase):
             with patch.object(board, "BOARD", path):
                 board.build(current, checked + timedelta(minutes=5))
                 rendered = path.read_bytes()
+                mobile_path = path.with_name("splitflap-board-mobile.svg")
+                portrait = mobile_path.read_bytes()
+                mobile_path.unlink()  # Repair the companion asset even on an unchanged poll.
                 board.build(current, checked + timedelta(minutes=10))
                 self.assertEqual(path.read_bytes(), rendered)
+                self.assertEqual(mobile_path.read_bytes(), portrait)
 
         root = ElementTree.fromstring(rendered)
         self.assertEqual(json.loads(root.find("{*}metadata").text)["checked"], saved["checked"])
+        mobile = ElementTree.fromstring(portrait)
+        self.assertEqual(mobile.find("{*}metadata").text, root.find("{*}metadata").text)
+        self.assertGreater(int(mobile.get("height")), int(mobile.get("width")))
+        for desktop_row, mobile_row in zip(root.findall("{*}g[@data-row]"), mobile.findall("{*}g[@data-row]"), strict=True):
+            self.assertEqual(desktop_row.get("aria-label"), mobile_row.get("aria-label"))
+            for wide, narrow in zip(desktop_row, mobile_row, strict=True):
+                self.assertNotEqual(wide.get("transform"), narrow.get("transform"))
+                self.assertEqual([el.attrib for el in wide.iter()][1:], [el.attrib for el in narrow.iter()][1:])
         cells = iter(root.find("{*}g[@data-row='0']"))
         for field, (old, new, (_, width)) in enumerate(zip(previous[0], current[0], board.COLUMNS)):
             for first, final in zip(old.ljust(width), new.ljust(width)):
