@@ -32,9 +32,9 @@ FLIGHTS = [
 COLUMNS = ((51, 7), (222, 13), (518, 3), (597, 5), (719, 5),
            (848, 1), (910, 1), (1008, 7), (1177, 3), (1260, 10))
 ROW_COUNT = 6
-INTERVAL = 18  # seconds of illustration per departure
+INTERVAL = 10  # seconds of illustration per departure
 CYCLE = INTERVAL * len(FLIGHTS)
-STEP = .12
+STEP = 1 / 16  # approximately two frames per character in the 29.97 fps close-up
 ATTENTION = {"FINAL CALL", "BOARDING", "GATE OPEN"}
 
 
@@ -69,13 +69,13 @@ def row_history(row):
     for index in range(len(FLIGHTS)):
         base = index * INTERVAL
         if row == 0:
-            history.append((base + 4.8, fields(index, row, True)))
-        history.append((base + 10.8, fields((index + 1) % len(FLIGHTS), row, False)))
+            history.append((base + 1.5, fields(index, row, True)))
+        history.append((base + 5.5, fields((index + 1) % len(FLIGHTS), row, False)))
     return history
 
 
 def ref(char):
-    return "#g" + {" ": "_", ":": "c"}.get(char, char)
+    return "#g" + {" ": "_", ":": "c", "*": "star", "/": "slash", ".": "dot"}.get(char, char)
 
 
 def discrete(attribute, events):
@@ -96,14 +96,12 @@ def motor(tile_id, x, row, track, bounds):
     chars = {char for _, char in track}
     if len(chars) == 1:
         return f'<use href="{ref(first)}"/>' if first != " " else ""
-    alphabet = " " + ascii_uppercase + digits + ":-"
+    alphabet = " " + ascii_uppercase + digits + "*-./:"
     if chars <= set(digits + " :"):
         alphabet = (" " if " " in chars else "") + digits + (":" if ":" in chars else "")
-    elif chars <= set(ascii_uppercase + " "):
-        alphabet = " " + ascii_uppercase
-    # All starts lie on this wheel's repeating 120 ms motor beat.
-    phase = ((x + 3 * row) % 7) * .012
-    stagger = (row + (x % 3)) * STEP + phase
+    # The filmed destination drums pass through numbers and punctuation on wrap.
+    # Wheels begin within one camera frame but stop at independent drum positions.
+    phase = ((x + 3 * row) % 7) * STEP / 12
     top = [(0, ref(first))]
     bottom = [(0, ref(first))]
     moving = [(0, 0)]
@@ -112,7 +110,7 @@ def motor(tile_id, x, row, track, bounds):
         count = (alphabet.index(goal) - alphabet.index(old)) % len(alphabet)
         if not count:
             continue
-        start = change + stagger
+        start = change + phase
         stop = start + STEP * count
         earliest, latest = bounds.get(change, (start, stop))
         bounds[change] = min(start, earliest), max(stop, latest)
@@ -131,15 +129,15 @@ def motor(tile_id, x, row, track, bounds):
   <g clip-path="url(#bottom-clip)"><use href="#{b}"/></g>
   <g opacity="0">{discrete("opacity", moving)}
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur=".12s" begin="{phase:.3f}s" repeatCount="indefinite"
+      <animateTransform attributeName="transform" type="scale" dur="{STEP}s" begin="{phase:.6f}s" repeatCount="indefinite"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="{phase:.3f}s" dur=".12s" repeatCount="indefinite" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="{phase:.6f}s" dur="{STEP}s" repeatCount="indefinite" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#{b}"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="{phase:.3f}s" dur=".12s" repeatCount="indefinite" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="{phase:.6f}s" dur="{STEP}s" repeatCount="indefinite" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#{a}"/>
         </g>
       </g>
