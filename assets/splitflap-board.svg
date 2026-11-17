@@ -5,7 +5,7 @@
   <style>
     .rest-face { display: none }
     @media (prefers-reduced-motion: reduce) {
-      .animated-face { display: none }
+      .animated-face, .lamp-shade { display: none }
       .rest-face { display: inline }
     }
   </style>
@@ -61,6 +61,15 @@
     <path id="glyph-X" transform="translate(2.61268 50.3) scale(0.01127 -0.027)" d="M129 1493H346L717 938L1090 1493H1307L827 776L1339 0H1122L702 635L279 0H61L594 797Z"/>
     <path id="glyph-Y" transform="translate(3.34575 50.3) scale(0.01144 -0.027)" d="M-4 1493H213L627 879L1038 1493H1255L727 711V0H524V711Z"/>
     <path id="glyph-Z" transform="translate(2.21321 50.3) scale(0.01181 -0.027)" d="M115 1493H1288V1339L344 170H1311V0H92V154L1036 1323H115Z"/>
+    <radialGradient id="green-lens" cx=".38" cy=".34" r=".72">
+      <stop stop-color="#cbffb1"/><stop offset=".32" stop-color="#91ef69"/>
+      <stop offset=".72" stop-color="#63c349"/><stop offset="1" stop-color="#33833b"/>
+    </radialGradient>
+    <g id="row-lamp">
+      <circle r="9.1" fill="#10110f" stroke="#343633" stroke-width="1"/>
+      <circle r="7.2" fill="url(#green-lens)" stroke="#142716" stroke-width=".8"/>
+      <path d="M-4.2-3.2q1.2-1.8 3.2-2" fill="none" stroke="#e7ffd8" opacity=".48" stroke-linecap="round"/>
+    </g>
   </defs>
   <rect x="1" y="1" width="1022" height="399" rx="15" fill="url(#rim)" stroke="#343330" stroke-width="2"/>
   <rect x="6" y="6" width="1012" height="389" rx="10" fill="#181817" stroke="#c1bcb0" stroke-opacity=".62"/>
@@ -70,13 +79,13 @@
   <g aria-label="ZÜRICH AIRPORT" fill="#f8f5e9" transform="translate(790.7127 50) scale(0.01074 -0.01074)"><path transform="translate(0 0)" d="M104 1493H1233V1260L512 291H1254V0H83V233L804 1202H104Z"/><path transform="translate(1438.4 0)" d="M169 1493H516V598Q516 413 570.5 333.5Q625 254 748 254Q872 254 926.5 333.5Q981 413 981 598V1493H1328V598Q1328 281 1184.5 126.0Q1041 -29 748 -29Q455 -29 312.0 126.0Q169 281 169 598ZM466 1899H677V1653H466ZM821 1899H1033V1653H821Z"/><path transform="translate(3036.8 0)" d="M662 831Q770 831 817.5 876.0Q865 921 865 1024Q865 1126 817.5 1170.0Q770 1214 662 1214H516V831ZM516 565V0H169V1493H698Q964 1493 1087.5 1394.0Q1211 1295 1211 1081Q1211 933 1147.0 838.0Q1083 743 953 698Q1024 680 1080.5 616.5Q1137 553 1194 424L1382 0H1013L850 371Q800 483 749.0 524.0Q698 565 614 565Z"/><path transform="translate(4558.2 0)" d="M169 1493H516V0H169Z"/><path transform="translate(5345.6 0)" d="M1235 82Q1139 27 1035.5 -1.0Q932 -29 820 -29Q484 -29 288.0 179.5Q92 388 92 745Q92 1103 288.0 1311.5Q484 1520 820 1520Q932 1520 1035.5 1492.0Q1139 1464 1235 1409V1100Q1138 1173 1044.5 1207.0Q951 1241 848 1241Q662 1241 556.0 1109.0Q450 977 450 745Q450 514 556.0 382.0Q662 250 848 250Q951 250 1044.5 284.0Q1138 318 1235 391Z"/><path transform="translate(6800 0)" d="M169 1493H516V924H1027V1493H1373V0H1027V633H516V0H169Z"/><path transform="translate(9187.8 0)" d="M985 272H443L357 0H9L507 1493H920L1418 0H1069ZM529 549H897L714 1143Z"/><path transform="translate(10716.2 0)" d="M169 1493H516V0H169Z"/><path transform="translate(11503.6 0)" d="M662 831Q770 831 817.5 876.0Q865 921 865 1024Q865 1126 817.5 1170.0Q770 1214 662 1214H516V831ZM516 565V0H169V1493H698Q964 1493 1087.5 1394.0Q1211 1295 1211 1081Q1211 933 1147.0 838.0Q1083 743 953 698Q1024 680 1080.5 616.5Q1137 553 1194 424L1382 0H1013L850 371Q800 483 749.0 524.0Q698 565 614 565Z"/><path transform="translate(13025 0)" d="M169 1493H744Q1001 1493 1138.0 1366.5Q1275 1240 1275 1006Q1275 771 1138.0 644.5Q1001 518 744 518H516V0H169ZM516 1214V797H707Q808 797 863.0 851.5Q918 906 918 1006Q918 1106 863.0 1160.0Q808 1214 707 1214Z"/><path transform="translate(14477.4 0)" d="M783 1241Q625 1241 537.5 1111.0Q450 981 450 745Q450 510 537.5 380.0Q625 250 783 250Q942 250 1029.5 380.0Q1117 510 1117 745Q1117 981 1029.5 1111.0Q942 1241 783 1241ZM783 1520Q1107 1520 1290.5 1314.0Q1474 1108 1474 745Q1474 383 1290.5 177.0Q1107 -29 783 -29Q460 -29 276.0 177.0Q92 383 92 745Q92 1108 276.0 1314.0Q460 1520 783 1520Z"/><path transform="translate(16145.8 0)" d="M662 831Q770 831 817.5 876.0Q865 921 865 1024Q865 1126 817.5 1170.0Q770 1214 662 1214H516V831ZM516 565V0H169V1493H698Q964 1493 1087.5 1394.0Q1211 1295 1211 1081Q1211 933 1147.0 838.0Q1083 743 953 698Q1024 680 1080.5 616.5Q1137 553 1194 424L1382 0H1013L850 371Q800 483 749.0 524.0Q698 565 614 565Z"/><path transform="translate(17667.2 0)" d="M9 1493H1247V1202H802V0H455V1202H9Z"/></g>
   <g aria-label="ZRH / LSZH" fill="#ffdc27" transform="translate(903.1334 70) scale(0.00635 -0.00635)"><path transform="translate(0 0)" d="M137 1493H1147V1249L455 260H1161V0H115V244L786 1233H137Z"/><path transform="translate(1453.55385 0)" d="M807 705Q851 696 883.5 663.5Q916 631 963 537L1233 0H909L729 377Q721 393 708 421Q629 590 522 590H428V0H133V1493H559Q847 1493 972.5 1391.0Q1098 1289 1098 1059Q1098 905 1023.0 814.0Q948 723 807 705ZM428 1245V838H567Q688 838 740.5 885.5Q793 933 793 1042Q793 1151 741.0 1198.0Q689 1245 567 1245Z"/><path transform="translate(2907.10769 0)" d="M137 1493H432V924H801V1493H1096V0H801V664H432V0H137Z"/><path transform="translate(5814.21538 0)" d="M899 1493H1120L334 -190H113Z"/><path transform="translate(8721.32308 0)" d="M225 0V1493H520V260H1151V0Z"/><path transform="translate(10174.87692 0)" d="M510 655Q287 740 208.0 833.5Q129 927 129 1085Q129 1288 259.0 1404.0Q389 1520 616 1520Q719 1520 822.0 1496.5Q925 1473 1026 1427V1139Q931 1206 833.0 1241.0Q735 1276 639 1276Q532 1276 475.0 1233.0Q418 1190 418 1110Q418 1048 459.5 1007.5Q501 967 633 918L760 870Q940 804 1025.0 695.0Q1110 586 1110 420Q1110 194 976.5 82.5Q843 -29 573 -29Q462 -29 350.5 -2.5Q239 24 135 76V381Q253 297 363.5 256.0Q474 215 582 215Q691 215 751.0 264.5Q811 314 811 403Q811 470 771.0 520.5Q731 571 655 600Z"/><path transform="translate(11628.43077 0)" d="M137 1493H1147V1249L455 260H1161V0H115V244L786 1233H137Z"/><path transform="translate(13081.98462 0)" d="M137 1493H432V924H801V1493H1096V0H801V664H432V0H137Z"/></g>
   <g transform="translate(755 30)"><rect width="30" height="30" rx="2" fill="#ca4343"/><path d="M12 5h6v7h7v6h-7v7h-6v-7H5v-6h7z" fill="#fff"/></g>
-  <g aria-label="TIME" fill="#ffdc27" transform="translate(30 109) scale(0.0083 -0.0083)"><path transform="translate(0 0)" d="M9 1493H1247V1202H802V0H455V1202H9Z"/><path transform="translate(1347.35294 0)" d="M169 1493H516V0H169Z"/><path transform="translate(2122.70588 0)" d="M169 1493H610L916 694L1224 1493H1664V0H1336V1092L1027 287H807L498 1092V0H169Z"/><path transform="translate(4047.05882 0)" d="M169 1493H1104V1202H516V924H1069V633H516V291H1124V0H169Z"/></g>
+  <g aria-label="TIME" fill="#ffdc27" transform="translate(52 109) scale(0.0083 -0.0083)"><path transform="translate(0 0)" d="M9 1493H1247V1202H802V0H455V1202H9Z"/><path transform="translate(1347.35294 0)" d="M169 1493H516V0H169Z"/><path transform="translate(2122.70588 0)" d="M169 1493H610L916 694L1224 1493H1664V0H1336V1092L1027 287H807L498 1092V0H169Z"/><path transform="translate(4047.05882 0)" d="M169 1493H1104V1202H516V924H1069V633H516V291H1124V0H169Z"/></g>
   <g aria-label="DESTINATION" fill="#ffdc27" transform="translate(178 109) scale(0.0083 -0.0083)"><path transform="translate(0 0)" d="M516 1202V291H640Q852 291 964.0 408.0Q1076 525 1076 748Q1076 970 964.5 1086.0Q853 1202 640 1202ZM169 1493H535Q841 1493 990.5 1444.5Q1140 1396 1247 1280Q1342 1179 1388.0 1047.0Q1434 915 1434 748Q1434 579 1388.0 446.5Q1342 314 1247 213Q1139 97 988.0 48.5Q837 0 535 0H169Z"/><path transform="translate(1620.35294 0)" d="M169 1493H1104V1202H516V924H1069V633H516V291H1124V0H169Z"/><path transform="translate(2969.70588 0)" d="M1104 1446V1130Q994 1185 888.5 1213.0Q783 1241 689 1241Q565 1241 505.5 1203.0Q446 1165 446 1085Q446 1025 486.0 991.5Q526 958 632 934L779 901Q1004 851 1098.0 749.0Q1192 647 1192 459Q1192 212 1060.5 91.5Q929 -29 658 -29Q530 -29 401.5 -2.0Q273 25 144 78V403Q273 327 393.0 288.5Q513 250 625 250Q738 250 798.5 292.0Q859 334 859 412Q859 482 818.0 520.0Q777 558 654 588L520 621Q319 669 225.5 774.0Q132 879 132 1057Q132 1280 262.0 1400.0Q392 1520 634 1520Q745 1520 862.0 1501.5Q979 1483 1104 1446Z"/><path transform="translate(4387.05882 0)" d="M9 1493H1247V1202H802V0H455V1202H9Z"/><path transform="translate(5734.41176 0)" d="M169 1493H516V0H169Z"/><path transform="translate(6509.76471 0)" d="M169 1493H556L1045 469V1493H1373V0H986L498 1024V0H169Z"/><path transform="translate(8142.11765 0)" d="M985 272H443L357 0H9L507 1493H920L1418 0H1069ZM529 549H897L714 1143Z"/><path transform="translate(9658.47059 0)" d="M9 1493H1247V1202H802V0H455V1202H9Z"/><path transform="translate(11005.82353 0)" d="M169 1493H516V0H169Z"/><path transform="translate(11781.17647 0)" d="M783 1241Q625 1241 537.5 1111.0Q450 981 450 745Q450 510 537.5 380.0Q625 250 783 250Q942 250 1029.5 380.0Q1117 510 1117 745Q1117 981 1029.5 1111.0Q942 1241 783 1241ZM783 1520Q1107 1520 1290.5 1314.0Q1474 1108 1474 745Q1474 383 1290.5 177.0Q1107 -29 783 -29Q460 -29 276.0 177.0Q92 383 92 745Q92 1108 276.0 1314.0Q460 1520 783 1520Z"/><path transform="translate(13437.52941 0)" d="M169 1493H556L1045 469V1493H1373V0H986L498 1024V0H169Z"/></g>
   <g aria-label="FLIGHT" fill="#ffdc27" transform="translate(492 109) scale(0.0083 -0.0083)"><path transform="translate(0 0)" d="M169 1493H1104V1202H516V924H1069V633H516V0H169Z"/><path transform="translate(1349.35294 0)" d="M169 1493H516V291H1124V0H169Z"/><path transform="translate(2613.70588 0)" d="M169 1493H516V0H169Z"/><path transform="translate(3389.05882 0)" d="M1377 111Q1247 41 1107.5 6.0Q968 -29 820 -29Q484 -29 288.0 179.5Q92 388 92 745Q92 1106 291.5 1313.0Q491 1520 839 1520Q973 1520 1096.0 1492.0Q1219 1464 1328 1409V1100Q1215 1171 1104.0 1206.0Q993 1241 881 1241Q674 1241 562.0 1112.5Q450 984 450 745Q450 508 558.0 379.0Q666 250 865 250Q919 250 965.5 257.5Q1012 265 1048 281V571H837V829H1377Z"/><path transform="translate(4991.41176 0)" d="M169 1493H516V924H1027V1493H1373V0H1027V633H516V0H169Z"/><path transform="translate(6623.76471 0)" d="M9 1493H1247V1202H802V0H455V1202H9Z"/></g>
   <g aria-label="GATE" fill="#ffdc27" transform="translate(629 109) scale(0.0083 -0.0083)"><path transform="translate(0 0)" d="M1377 111Q1247 41 1107.5 6.0Q968 -29 820 -29Q484 -29 288.0 179.5Q92 388 92 745Q92 1106 291.5 1313.0Q491 1520 839 1520Q973 1520 1096.0 1492.0Q1219 1464 1328 1409V1100Q1215 1171 1104.0 1206.0Q993 1241 881 1241Q674 1241 562.0 1112.5Q450 984 450 745Q450 508 558.0 379.0Q666 250 865 250Q919 250 965.5 257.5Q1012 265 1048 281V571H837V829H1377Z"/><path transform="translate(1602.35294 0)" d="M985 272H443L357 0H9L507 1493H920L1418 0H1069ZM529 549H897L714 1143Z"/><path transform="translate(3118.70588 0)" d="M9 1493H1247V1202H802V0H455V1202H9Z"/><path transform="translate(4466.05882 0)" d="M169 1493H1104V1202H516V924H1069V633H516V291H1124V0H169Z"/></g>
   <g aria-label="REMARK" fill="#ffdc27" transform="translate(746 109) scale(0.0083 -0.0083)"><path transform="translate(0 0)" d="M662 831Q770 831 817.5 876.0Q865 921 865 1024Q865 1126 817.5 1170.0Q770 1214 662 1214H516V831ZM516 565V0H169V1493H698Q964 1493 1087.5 1394.0Q1211 1295 1211 1081Q1211 933 1147.0 838.0Q1083 743 953 698Q1024 680 1080.5 616.5Q1137 553 1194 424L1382 0H1013L850 371Q800 483 749.0 524.0Q698 565 614 565Z"/><path transform="translate(1509.35294 0)" d="M169 1493H1104V1202H516V924H1069V633H516V291H1124V0H169Z"/><path transform="translate(2858.70588 0)" d="M169 1493H610L916 694L1224 1493H1664V0H1336V1092L1027 287H807L498 1092V0H169Z"/><path transform="translate(4783.05882 0)" d="M985 272H443L357 0H9L507 1493H920L1418 0H1069ZM529 549H897L714 1143Z"/><path transform="translate(6299.41176 0)" d="M662 831Q770 831 817.5 876.0Q865 921 865 1024Q865 1126 817.5 1170.0Q770 1214 662 1214H516V831ZM516 565V0H169V1493H698Q964 1493 1087.5 1394.0Q1211 1295 1211 1081Q1211 933 1147.0 838.0Q1083 743 953 698Q1024 680 1080.5 616.5Q1137 553 1194 424L1382 0H1013L850 371Q800 483 749.0 524.0Q698 565 614 565Z"/><path transform="translate(7808.76471 0)" d="M169 1493H516V948L1015 1493H1418L770 786L1484 0H1050L516 588V0H169Z"/></g>
   <g transform="translate(0 124) scale(1 .68)" aria-label="18:40 · MUNICH · J302 · A63 · ON TIME" fill="#f8f5e9">
-      <g transform="translate(30 0)">
+      <g transform="translate(52 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-1"/></g>
 <g class="animated-face">
@@ -90,7 +99,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(52 0)">
+      <g transform="translate(74 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-8"/></g>
 <g class="animated-face">
@@ -104,12 +113,12 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(74 0)">
+      <g transform="translate(96 0)">
 <use xlink:href="#tile"/>
 <use xlink:href="#glyph-colon"/>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(96 0)">
+      <g transform="translate(118 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-4"/></g>
 <g class="animated-face">
@@ -123,7 +132,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(118 0)">
+      <g transform="translate(140 0)">
 <use xlink:href="#tile"/>
 <use xlink:href="#glyph-0"/>
 <use xlink:href="#seam"/>
@@ -479,7 +488,7 @@
       </g>
   </g>
   <g transform="translate(0 167) scale(1 .68)" aria-label="18:52 · SAN FRANCISCO · J977 · E48 · DELAYED" fill="#f8f5e9">
-      <g transform="translate(30 0)">
+      <g transform="translate(52 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-1"/></g>
 <g class="animated-face">
@@ -493,7 +502,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(52 0)">
+      <g transform="translate(74 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-8"/></g>
 <g class="animated-face">
@@ -507,12 +516,12 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(74 0)">
+      <g transform="translate(96 0)">
 <use xlink:href="#tile"/>
 <use xlink:href="#glyph-colon"/>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(96 0)">
+      <g transform="translate(118 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-5"/></g>
 <g class="animated-face">
@@ -526,7 +535,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(118 0)">
+      <g transform="translate(140 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-2"/></g>
 <g class="animated-face">
@@ -954,7 +963,7 @@
       </g>
   </g>
   <g transform="translate(0 210) scale(1 .68)" aria-label="19:07 · HONG KONG · K048 · E35 · BOARDING" fill="#f8f5e9">
-      <g transform="translate(30 0)">
+      <g transform="translate(52 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-1"/></g>
 <g class="animated-face">
@@ -968,7 +977,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(52 0)">
+      <g transform="translate(74 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-9"/></g>
 <g class="animated-face">
@@ -982,12 +991,12 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(74 0)">
+      <g transform="translate(96 0)">
 <use xlink:href="#tile"/>
 <use xlink:href="#glyph-colon"/>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(96 0)">
+      <g transform="translate(118 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-0"/></g>
 <g class="animated-face">
@@ -1001,7 +1010,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(118 0)">
+      <g transform="translate(140 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-7"/></g>
 <g class="animated-face">
@@ -1402,7 +1411,7 @@
       </g>
   </g>
   <g transform="translate(0 253) scale(1 .68)" aria-label="19:14 · AMSTERDAM · L160 · A11 · ON TIME" fill="#f8f5e9">
-      <g transform="translate(30 0)">
+      <g transform="translate(52 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-1"/></g>
 <g class="animated-face">
@@ -1416,7 +1425,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(52 0)">
+      <g transform="translate(74 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-9"/></g>
 <g class="animated-face">
@@ -1430,12 +1439,12 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(74 0)">
+      <g transform="translate(96 0)">
 <use xlink:href="#tile"/>
 <use xlink:href="#glyph-colon"/>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(96 0)">
+      <g transform="translate(118 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-1"/></g>
 <g class="animated-face">
@@ -1449,7 +1458,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(118 0)">
+      <g transform="translate(140 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-4"/></g>
 <g class="animated-face">
@@ -1859,7 +1868,7 @@
       </g>
   </g>
   <g transform="translate(0 296) scale(1 .68)" aria-label="19:25 · SYDNEY · J525 · E17 · ON TIME" fill="#f8f5e9">
-      <g transform="translate(30 0)">
+      <g transform="translate(52 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-1"/></g>
 <g class="animated-face">
@@ -1873,7 +1882,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(52 0)">
+      <g transform="translate(74 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-9"/></g>
 <g class="animated-face">
@@ -1887,12 +1896,12 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(74 0)">
+      <g transform="translate(96 0)">
 <use xlink:href="#tile"/>
 <use xlink:href="#glyph-colon"/>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(96 0)">
+      <g transform="translate(118 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-2"/></g>
 <g class="animated-face">
@@ -1906,7 +1915,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(118 0)">
+      <g transform="translate(140 0)">
 <use xlink:href="#tile"/>
 <use xlink:href="#glyph-5"/>
 <use xlink:href="#seam"/>
@@ -2307,7 +2316,7 @@
       </g>
   </g>
   <g transform="translate(0 339) scale(1 .68)" aria-label="19:33 · TOKYO · Z294 · E46 · BOARDING" fill="#f8f5e9">
-      <g transform="translate(30 0)">
+      <g transform="translate(52 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-1"/></g>
 <g class="animated-face">
@@ -2321,7 +2330,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(52 0)">
+      <g transform="translate(74 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-9"/></g>
 <g class="animated-face">
@@ -2335,12 +2344,12 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(74 0)">
+      <g transform="translate(96 0)">
 <use xlink:href="#tile"/>
 <use xlink:href="#glyph-colon"/>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(96 0)">
+      <g transform="translate(118 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-3"/></g>
 <g class="animated-face">
@@ -2354,7 +2363,7 @@
 </g></g></g></g></g>
 <use xlink:href="#seam"/>
       </g>
-      <g transform="translate(118 0)">
+      <g transform="translate(140 0)">
 <use xlink:href="#tile"/>
 <g class="rest-face"><use xlink:href="#glyph-3"/></g>
 <g class="animated-face">
@@ -2744,5 +2753,50 @@
 
 <use xlink:href="#seam"/>
       </g>
+  </g>
+  <g aria-hidden="true">
+    <path d="M43 124v256" stroke="#383a36"/>
+    <g transform="translate(28 144.4)">
+      <use xlink:href="#row-lamp"/>
+      <circle class="lamp-shade" r="7" fill="#112b19" opacity="0">
+        <animate attributeName="opacity" calcMode="discrete" dur="30s" repeatCount="indefinite"
+                 keyTimes="0;0.2019;0.3031;0.466667;0.569867;0.733333;0.840233;1" values="0;.70;0;.70;0;.70;0;0"/>
+      </circle>
+    </g>
+    <g transform="translate(28 187.4)">
+      <use xlink:href="#row-lamp"/>
+      <circle class="lamp-shade" r="7" fill="#112b19" opacity="0">
+        <animate attributeName="opacity" calcMode="discrete" dur="30s" repeatCount="indefinite"
+                 keyTimes="0;0.205433;0.306033;0.4714;0.5776;0.738067;0.832067;1" values="0;.70;0;.70;0;.70;0;0"/>
+      </circle>
+    </g>
+    <g transform="translate(28 230.4)">
+      <use xlink:href="#row-lamp"/>
+      <circle class="lamp-shade" r="7" fill="#112b19" opacity="0">
+        <animate attributeName="opacity" calcMode="discrete" dur="30s" repeatCount="indefinite"
+                 keyTimes="0;0.206867;0.308767;0.475433;0.580433;0.7402;0.8433;1" values="0;.70;0;.70;0;.70;0;0"/>
+      </circle>
+    </g>
+    <g transform="translate(28 273.4)">
+      <use xlink:href="#row-lamp"/>
+      <circle class="lamp-shade" r="7" fill="#112b19" opacity="0">
+        <animate attributeName="opacity" calcMode="discrete" dur="30s" repeatCount="indefinite"
+                 keyTimes="0;0.2123;0.3147;0.478267;0.575467;0.744933;0.852833;1" values="0;.70;0;.70;0;.70;0;0"/>
+      </circle>
+    </g>
+    <g transform="translate(28 316.4)">
+      <use xlink:href="#row-lamp"/>
+      <circle class="lamp-shade" r="7" fill="#112b19" opacity="0">
+        <animate attributeName="opacity" calcMode="discrete" dur="30s" repeatCount="indefinite"
+                 keyTimes="0;0.213733;0.317333;0.4818;0.5735;0.747067;0.853967;1" values="0;.70;0;.70;0;.70;0;0"/>
+      </circle>
+    </g>
+    <g transform="translate(28 359.4)">
+      <use xlink:href="#row-lamp"/>
+      <circle class="lamp-shade" r="7" fill="#112b19" opacity="0">
+        <animate attributeName="opacity" calcMode="discrete" dur="30s" repeatCount="indefinite"
+                 keyTimes="0;0.218467;0.326367;0.483933;0.591833;0.7506;0.8523;1" values="0;.70;0;.70;0;.70;0;0"/>
+      </circle>
+    </g>
   </g>
 </svg>
