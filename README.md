@@ -53,10 +53,10 @@ I’m usually reading about aviation, planning a city trip or looking for somewh
 
 ### Zürich departures
 
-Watch the green lamp at the left of a row. It dims as the first flap moves and lights up again when the last character lands. Give the board half a minute and you’ll see all 18 fictional flights pass through Zürich.
+Look down the left edge for the pairs of green lamps. They blink back and forth while the split flaps cycle through the evening departures. Give the board half a minute and you’ll see all 18 fictional flights pass through Zürich.
 
 <p align="center">
-  <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich Airport departures board with a green indicator beside each of six rows. Mechanical flaps cycle through three fictional schedules." />
+  <img src="./assets/splitflap-board.svg" width="100%" alt="Zürich Airport departures board with two alternating green lamps beside each of six rows. Mechanical flaps cycle through three fictional schedules." />
 </p>
 
 <p align="center"><sub><samp>ZRH / LSZH &nbsp; · &nbsp; FICTIONAL DEPARTURES</samp></sub></p>
