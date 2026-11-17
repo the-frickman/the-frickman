@@ -12,7 +12,7 @@
 <p align="center">
   <a href="#01--whoami"><img src="./assets/webbuttons/powershell.svg" width="238" height="88" alt="A retro window for PowerShell and automation" /></a>
   <a href="#02--toolkitini"><img src="./assets/webbuttons/web.svg" width="238" height="88" alt="A retro window for web development" /></a>
-  <a href="#04--after-hours"><img src="./assets/webbuttons/aviation.svg" width="238" height="88" alt="A retro window for aviation" /></a>
+  <a href="#04--after_hours"><img src="./assets/webbuttons/aviation.svg" width="238" height="88" alt="A retro window for aviation" /></a>
 </p>
 
 <p align="center">
