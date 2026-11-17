@@ -1,7 +1,7 @@
 <!-- Early-internet energy; modern tools. All original graphics, stored locally in this repository. -->
 
 <p align="center">
-  <img src="./assets/flight-banner.svg" width="100%" alt="Manuel Frick: a detailed pixel-art airliner climbing above a mountain airport at twilight, with navy-blue skies and coral sunset" />
+  <img src="./assets/hero-airliner.svg" width="100%" alt="Manuel Frick: a recognisable twin-engine commercial airliner with swept wings and mounted turbofans climbing over the Alps at twilight, with navy-blue skies and coral sunset" />
 </p>
 
 <p align="center">
@@ -99,7 +99,7 @@ I also miss the era of personal websites, guestbooks, lovingly designed forum si
 ---
 
 <p align="center">
-  <img src="./assets/departures.svg" width="100%" alt="Animated vintage airport departures board with actual split-flap transitions between fictional example destinations, times, gates and flight statuses" />
+  <img src="./assets/splitflap-board.svg" width="100%" alt="Animated vintage airport departures board with actual split-flap transitions between fictional example destinations, times, gates and flight statuses" />
 </p>
 
 <p align="center">
