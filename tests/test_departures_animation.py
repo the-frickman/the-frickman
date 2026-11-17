@@ -10,7 +10,7 @@ from scripts import build_departures as board
 
 
 class DeparturesAnimationTest(unittest.TestCase):
-    def test_remark_only_update_still_opens_every_populated_column(self):
+    def test_settled_board_and_optional_replay_match_the_same_snapshot(self):
         fields = ["LX  092", "BUENOS AIRES", "GRU", "22:35", "22:45", "E", "1",
                   "121-126", "E23", "BOARDING"]
         previous = [fields, *[board.EMPTY] * 4]
@@ -45,6 +45,8 @@ class DeparturesAnimationTest(unittest.TestCase):
                 if final == " ":
                     self.assertFalse(tracks)
                     continue
+                settled = cell.find("{*}g[@class='rest-face']/{*}use")
+                self.assertEqual(settled.get("href"), board.ref(final))
                 self.assertEqual(len(tracks), 2)
                 for track in tracks:
                     times = [float(t) * board.CYCLE for t in track.get("keyTimes").split(";")]
