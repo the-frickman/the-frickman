@@ -19,8 +19,10 @@ COLUMNS = ((51, 7), (222, 13), (518, 3), (597, 5), (719, 5),
            (848, 1), (910, 1), (1008, 7), (1177, 3), (1260, 10))
 EMPTY = [""] * len(COLUMNS)
 STEP = 1 / (16 * 0.60)
-CHANGE = 8 * STEP
-CYCLE = 6  # One transition, then hold the new state.
+# Start both movements on a motor tick. The longest drum has 42 faces.
+OPENING = 2 * STEP
+UPDATE = 56 * STEP
+CYCLE = 11  # Hold the current flight data after both movements have finished.
 ATTENTION = {"BOARDING", "GO TO GATE", "GATE OPEN", "FINAL CALL", "LAST CALL"}
 
 
@@ -98,28 +100,31 @@ def print_track(name, events):
 
 def motor(tile_id, x, row, first, goal, stops):
     """A released card exposes the next top and turns into the next bottom."""
-    chars = {first, goal}
-    if first == goal:
-        return f'<use href="{ref(first)}"/>' if first != " " else ""
+    if first == goal == " ":
+        return ""
     alphabet = " " + ascii_uppercase + digits + "*-./:"
-    if chars <= set(digits + " :"):
-        alphabet = (" " if " " in chars else "") + digits + (":" if ":" in chars else "")
-    # The filmed destination drums pass through numbers and punctuation on wrap.
-    # Wheels begin within one camera frame but stop at independent drum positions.
+    if {first, goal} <= set(digits + " :"):
+        alphabet = " " + digits + (":" if ":" in (first, goal) else "")
+
     phase = ((x + 3 * row) % 7) * STEP / 12
-    top = [(0, ref(first))]
-    bottom = [(0, ref(first))]
+    top = [(0, ref(" "))]
+    bottom = [(0, ref(" "))]
     moving = [(0, 0)]
-    index = alphabet.index(first)
-    count = (alphabet.index(goal) - index) % len(alphabet)
-    start = CHANGE + phase
-    stop = start + STEP * count
-    stops.append(stop)
-    moving.extend(((start, 1), (stop, 0)))
-    for step in range(count):
-        exposed = ref(alphabet[(index + step + 1) % len(alphabet)])
-        top.append((start + step * STEP, exposed))
-        bottom.append((start + (step + 1) * STEP, exposed))
+    index = 0
+    for change, target in ((OPENING, first), (UPDATE, goal)):
+        target_index = alphabet.index(target)
+        count = (target_index - index) % len(alphabet)
+        if not count:
+            continue
+        start = change + phase
+        stop = start + STEP * count
+        stops[change] = max(stops.get(change, 0), stop)
+        moving.extend(((start, 1), (stop, 0)))
+        for step in range(count):
+            exposed = ref(alphabet[(index + step + 1) % len(alphabet)])
+            top.append((start + step * STEP, exposed))
+            bottom.append((start + (step + 1) * STEP, exposed))
+        index = target_index
     for events in (top, bottom, moving):
         events.append((CYCLE, events[-1][1]))
     a, b = tile_id + "t", tile_id + "b"
@@ -130,15 +135,15 @@ def motor(tile_id, x, row, first, goal, stops):
   <g clip-path="url(#bottom-clip)"><use href="#{b}"/></g>
   <g opacity="0">{discrete("opacity", moving)}
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="{STEP}s" begin="{start:.6f}s" end="{stop:.6f}s" repeatCount="indefinite"
+      <animateTransform attributeName="transform" type="scale" dur="{STEP}s" begin="{phase:.6f}s" end="{stop:.6f}s" repeatCount="indefinite"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="{start:.6f}s" dur="{STEP}s" end="{stop:.6f}s" repeatCount="indefinite" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="{phase:.6f}s" dur="{STEP}s" end="{stop:.6f}s" repeatCount="indefinite" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#{b}"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="{start:.6f}s" dur="{STEP}s" end="{stop:.6f}s" repeatCount="indefinite" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="{phase:.6f}s" dur="{STEP}s" end="{stop:.6f}s" repeatCount="indefinite" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#{a}"/>
         </g>
       </g>
@@ -153,22 +158,25 @@ def build(rows, now):
     if not marker:
         raise ValueError("SVG artwork is missing its departures marker")
     saved = ElementTree.fromstring(old_svg).find("{*}metadata[@id='snapshot']")
-    previous = [EMPTY] * 5
+    previous = rows
     if saved is not None:
         state = json.loads(saved.text)
         last_change = timestamp(state["checked"])
         if rows == state["rows"] and now.astimezone(ZURICH).date() == last_change.astimezone(ZURICH).date():
-            return
-        age = now - last_change
-        if timedelta(0) <= age <= timedelta(minutes=45):
+            if state.get("opening_flip"):
+                return
+            # Upgrade the existing SVG even when the airport data hasn't changed.
+            previous = state["before"] if any(any(row) for row in state["before"]) else rows
+            now = last_change
+        elif timedelta(0) <= now - last_change <= timedelta(minutes=45):
             previous = state["rows"]
-    state = {"before": previous, "rows": rows, "checked": now.isoformat()}
+    state = {"before": previous, "rows": rows, "checked": now.isoformat(), "opening_flip": True}
     stamp = now.astimezone(ZURICH).strftime("%d %b %Y · %H:%M %Z").upper()
     parts = [shell.rstrip(), MARKER, f'<metadata id="snapshot">{escape(json.dumps(state))}</metadata>',
              f'<text x="755" y="57" text-anchor="middle" fill="#c9c7bb" '
              f'font-family="monospace" font-size="18">BOARD UPDATED · {stamp}</text>']
     for row, (old, new) in enumerate(zip(previous, rows)):
-        stops = []
+        stops = {}
         label = escape(" · ".join(filter(None, new)))
         parts.append(f'<g data-row="{row}" aria-label="{label}" fill="#f8f5e9" '
                      f'transform="translate(0 {143 + 43*row}) scale(1 .68)">')
@@ -181,13 +189,13 @@ def build(rows, now):
         parts.append(f'</g><g transform="translate(27 {163.4 + 43*row:.1f})"><use href="#dark-pair"/>')
         if new[-1] in ATTENTION:
             parts.append('<use class="rest-face" href="#attention-pair"/>')
-        if stops:
-            start, stop = CHANGE, max(stops)
-            lamp_events = [(0, int(old[-1] in ATTENTION)), (start, 0), (stop, int(new[-1] in ATTENTION))]
+        if old[-1] in ATTENTION or new[-1] in ATTENTION:
+            lamp_events = [(0, 0)]
+            for change, status in ((OPENING, old[-1]), (UPDATE, new[-1])):
+                if change in stops:
+                    lamp_events.extend(((change, 0), (stops[change], int(status in ATTENTION))))
             parts.append(f'<g class="motion-lamps" opacity="{int(new[-1] in ATTENTION)}">'
                          f'{discrete("opacity", lamp_events)}<use href="#attention-pair"/></g>')
-        elif new[-1] in ATTENTION:
-            parts.append('<use class="motion-lamps" href="#attention-pair"/>')
         parts.append("</g>")
     parts.append("</svg>\n")
     BOARD.write_text("\n".join(parts))
