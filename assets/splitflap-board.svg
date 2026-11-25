@@ -128,9 +128,9 @@
   <g aria-label="Remarks" fill="#c9c7bb" transform="translate(1260 125) scale(0.00732 -0.00732)"><path transform="translate(0 0)" d="M909 700Q974 678 1035.5 606.0Q1097 534 1159 408L1364 0H1147L956 383Q882 533 812.5 582.0Q743 631 623 631H403V0H201V1493H657Q913 1493 1039.0 1386.0Q1165 1279 1165 1063Q1165 922 1099.5 829.0Q1034 736 909 700ZM403 1327V797H657Q803 797 877.5 864.5Q952 932 952 1063Q952 1194 877.5 1260.5Q803 1327 657 1327Z"/><path transform="translate(1423 0)" d="M1151 606V516H305Q317 326 419.5 226.5Q522 127 705 127Q811 127 910.5 153.0Q1010 179 1108 231V57Q1009 15 905.0 -7.0Q801 -29 694 -29Q426 -29 269.5 127.0Q113 283 113 549Q113 824 261.5 985.5Q410 1147 662 1147Q888 1147 1019.5 1001.5Q1151 856 1151 606ZM967 660Q965 811 882.5 901.0Q800 991 664 991Q510 991 417.5 904.0Q325 817 311 659Z"/><path transform="translate(2683 0)" d="M1065 905Q1134 1029 1230.0 1088.0Q1326 1147 1456 1147Q1631 1147 1726.0 1024.5Q1821 902 1821 676V0H1636V670Q1636 831 1579.0 909.0Q1522 987 1405 987Q1262 987 1179.0 892.0Q1096 797 1096 633V0H911V670Q911 832 854.0 909.5Q797 987 678 987Q537 987 454.0 891.5Q371 796 371 633V0H186V1120H371V946Q434 1049 522.0 1098.0Q610 1147 731 1147Q853 1147 938.5 1085.0Q1024 1023 1065 905Z"/><path transform="translate(4678 0)" d="M702 563Q479 563 393.0 512.0Q307 461 307 338Q307 240 371.5 182.5Q436 125 547 125Q700 125 792.5 233.5Q885 342 885 522V563ZM1069 639V0H885V170Q822 68 728.0 19.5Q634 -29 498 -29Q326 -29 224.5 67.5Q123 164 123 326Q123 515 249.5 611.0Q376 707 627 707H885V725Q885 852 801.5 921.5Q718 991 567 991Q471 991 380.0 968.0Q289 945 205 899V1069Q306 1108 401.0 1127.5Q496 1147 586 1147Q829 1147 949.0 1021.0Q1069 895 1069 639Z"/><path transform="translate(5933 0)" d="M842 948Q811 966 774.5 974.5Q738 983 694 983Q538 983 454.5 881.5Q371 780 371 590V0H186V1120H371V946Q429 1048 522.0 1097.5Q615 1147 748 1147Q767 1147 790.0 1144.5Q813 1142 841 1137Z"/><path transform="translate(6775 0)" d="M186 1556H371V637L920 1120H1155L561 596L1180 0H940L371 547V0H186Z"/><path transform="translate(7961 0)" d="M907 1087V913Q829 953 745.0 973.0Q661 993 571 993Q434 993 365.5 951.0Q297 909 297 825Q297 761 346.0 724.5Q395 688 543 655L606 641Q802 599 884.5 522.5Q967 446 967 309Q967 153 843.5 62.0Q720 -29 504 -29Q414 -29 316.5 -11.5Q219 6 111 41V231Q213 178 312.0 151.5Q411 125 508 125Q638 125 708.0 169.5Q778 214 778 295Q778 370 727.5 410.0Q677 450 506 487L442 502Q271 538 195.0 612.5Q119 687 119 817Q119 975 231.0 1061.0Q343 1147 549 1147Q651 1147 741.0 1132.0Q831 1117 907 1087Z"/></g>
   <path d="M28 134.5h1456" stroke="#514f49"/>
   <!-- BEGIN GENERATED DEPARTURES -->
-<metadata id="snapshot">{"rows": [["LH 1187", "FRANKFURT", "", "11:25", "11:35", "A", "1", "", "A62", "BOARDING"], ["LX  154", "MUMBAI", "", "09:50", "11:45", "E", "1", "", "E42", "BOARDING"], ["EZY 329", "EDINBURGH", "", "11:15", "11:45", "D", "3", "", "D41", "GO TO GATE"], ["AT  937", "CASABLANCA", "", "11:45", "", "E", "2", "", "E64", "BOARDING"], ["UA  053", "WASHINGTON", "", "11:45", "", "E", "2", "", "E47", "CLOSED"]], "checked": "2026-11-25T10:25:10.779079+00:00", "drum_revision": 3}</metadata>
-<text x="755" y="57" text-anchor="middle" fill="#c9c7bb" font-family="monospace" font-size="18">BOARD UPDATED · 25 NOV 2026 · 11:25 CET</text>
-<g data-row="0" aria-label="LH 1187 · FRANKFURT · 11:25 · 11:35 · A · 1 · A62 · BOARDING" fill="#f8f5e9" transform="translate(0 143) scale(1 .68)">
+<metadata id="snapshot">{"rows": [["LH 1187", "FRANKFURT", "", "11:25", "11:35", "A", "1", "", "A62", "CLOSED"], ["LX  154", "MUMBAI", "", "09:50", "11:45", "E", "1", "", "E42", "BOARDING"], ["EZY 329", "EDINBURGH", "", "11:15", "11:45", "D", "3", "", "D41", "GO TO GATE"], ["AT  937", "CASABLANCA", "", "11:45", "", "E", "2", "", "E64", "BOARDING"], ["UA  053", "WASHINGTON", "", "11:45", "", "E", "2", "", "E47", "CLOSED"]], "checked": "2026-11-25T10:36:25.937116+00:00", "drum_revision": 3}</metadata>
+<text x="755" y="57" text-anchor="middle" fill="#c9c7bb" font-family="monospace" font-size="18">BOARD UPDATED · 25 NOV 2026 · 11:36 CET</text>
+<g data-row="0" aria-label="LH 1187 · FRANKFURT · 11:25 · 11:35 · A · 1 · A62 · CLOSED" fill="#f8f5e9" transform="translate(0 143) scale(1 .68)">
 <g transform="translate(51 0)"><use href="#tile"/><g class="rest-face"><use href="#gL"/></g>
 <g class="animated-face">
   <defs><use id="r0x51t" href="#gL"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.037616;0.054977;0.072338;0.089699;0.10706;0.124421;0.141782;0.159144;0.176505;0.193866;0.211227;0.228588;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gL" fill="freeze"/></use><use id="r0x51b" href="#gL"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.054977;0.072338;0.089699;0.10706;0.124421;0.141782;0.159144;0.176505;0.193866;0.211227;0.228588;0.245949;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gL" fill="freeze"/></use></defs>
@@ -806,187 +806,143 @@
     </g></g>
   </g>
 </g><use href="#seam"/></g>
-<g transform="translate(1260 0)"><use href="#tile"/><g class="rest-face"><use href="#gB"/></g>
+<g transform="translate(1260 0)"><use href="#tile"/><g class="rest-face"><use href="#gC"/></g>
 <g class="animated-face">
-  <defs><use id="r0x1260t" href="#gB"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.034722;0.052083;1" values="#g_;#gA;#gB;#gB" fill="freeze"/></use><use id="r0x1260b" href="#gB"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.052083;0.069444;1" values="#g_;#gA;#gB;#gB" fill="freeze"/></use></defs>
+  <defs><use id="r0x1260t" href="#gC"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.034722;0.052083;0.069444;1" values="#g_;#gA;#gB;#gC;#gC" fill="freeze"/></use><use id="r0x1260b" href="#gC"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.052083;0.069444;0.086806;1" values="#g_;#gA;#gB;#gC;#gC" fill="freeze"/></use></defs>
   <g clip-path="url(#top-clip)"><use href="#r0x1260t"/></g>
   <g clip-path="url(#bottom-clip)"><use href="#r0x1260b"/></g>
-  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.034722;0.069444;1" values="0;1;0;0" fill="freeze"/>
+  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.034722;0.086806;1" values="0;1;0;0" fill="freeze"/>
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.208333s" repeatCount="2"
+      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.208333s" repeatCount="3"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.208333s" dur="0.10416666666666667s" repeatCount="2" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.208333s" dur="0.10416666666666667s" repeatCount="3" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#r0x1260b"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.208333s" dur="0.10416666666666667s" repeatCount="2" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.208333s" dur="0.10416666666666667s" repeatCount="3" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#r0x1260t"/>
         </g>
       </g>
     </g></g>
   </g>
 </g><use href="#seam"/></g>
-<g transform="translate(1282 0)"><use href="#tile"/><g class="rest-face"><use href="#gO"/></g>
+<g transform="translate(1282 0)"><use href="#tile"/><g class="rest-face"><use href="#gL"/></g>
 <g class="animated-face">
-  <defs><use id="r0x1282t" href="#gO"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.036169;0.05353;0.070891;0.088252;0.105613;0.122975;0.140336;0.157697;0.175058;0.192419;0.20978;0.227141;0.244502;0.261863;0.279225;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gO;#gO" fill="freeze"/></use><use id="r0x1282b" href="#gO"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.05353;0.070891;0.088252;0.105613;0.122975;0.140336;0.157697;0.175058;0.192419;0.20978;0.227141;0.244502;0.261863;0.279225;0.296586;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gO;#gO" fill="freeze"/></use></defs>
+  <defs><use id="r0x1282t" href="#gL"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.036169;0.05353;0.070891;0.088252;0.105613;0.122975;0.140336;0.157697;0.175058;0.192419;0.20978;0.227141;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gL" fill="freeze"/></use><use id="r0x1282b" href="#gL"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.05353;0.070891;0.088252;0.105613;0.122975;0.140336;0.157697;0.175058;0.192419;0.20978;0.227141;0.244502;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gL" fill="freeze"/></use></defs>
   <g clip-path="url(#top-clip)"><use href="#r0x1282t"/></g>
   <g clip-path="url(#bottom-clip)"><use href="#r0x1282b"/></g>
-  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.036169;0.296586;1" values="0;1;0;0" fill="freeze"/>
+  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.036169;0.244502;1" values="0;1;0;0" fill="freeze"/>
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.217014s" repeatCount="15"
+      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.217014s" repeatCount="12"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.217014s" dur="0.10416666666666667s" repeatCount="15" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.217014s" dur="0.10416666666666667s" repeatCount="12" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#r0x1282b"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.217014s" dur="0.10416666666666667s" repeatCount="15" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.217014s" dur="0.10416666666666667s" repeatCount="12" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#r0x1282t"/>
         </g>
       </g>
     </g></g>
   </g>
 </g><use href="#seam"/></g>
-<g transform="translate(1304 0)"><use href="#tile"/><g class="rest-face"><use href="#gA"/></g>
+<g transform="translate(1304 0)"><use href="#tile"/><g class="rest-face"><use href="#gO"/></g>
 <g class="animated-face">
-  <defs><use id="r0x1304t" href="#gA"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.037616;1" values="#g_;#gA;#gA" fill="freeze"/></use><use id="r0x1304b" href="#gA"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.054977;1" values="#g_;#gA;#gA" fill="freeze"/></use></defs>
+  <defs><use id="r0x1304t" href="#gO"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.037616;0.054977;0.072338;0.089699;0.10706;0.124421;0.141782;0.159144;0.176505;0.193866;0.211227;0.228588;0.245949;0.26331;0.280671;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gO;#gO" fill="freeze"/></use><use id="r0x1304b" href="#gO"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.054977;0.072338;0.089699;0.10706;0.124421;0.141782;0.159144;0.176505;0.193866;0.211227;0.228588;0.245949;0.26331;0.280671;0.298032;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gO;#gO" fill="freeze"/></use></defs>
   <g clip-path="url(#top-clip)"><use href="#r0x1304t"/></g>
   <g clip-path="url(#bottom-clip)"><use href="#r0x1304b"/></g>
-  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.037616;0.054977;1" values="0;1;0;0" fill="freeze"/>
+  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.037616;0.298032;1" values="0;1;0;0" fill="freeze"/>
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.225694s" repeatCount="1"
+      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.225694s" repeatCount="15"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.225694s" dur="0.10416666666666667s" repeatCount="1" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.225694s" dur="0.10416666666666667s" repeatCount="15" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#r0x1304b"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.225694s" dur="0.10416666666666667s" repeatCount="1" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.225694s" dur="0.10416666666666667s" repeatCount="15" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#r0x1304t"/>
         </g>
       </g>
     </g></g>
   </g>
 </g><use href="#seam"/></g>
-<g transform="translate(1326 0)"><use href="#tile"/><g class="rest-face"><use href="#gR"/></g>
+<g transform="translate(1326 0)"><use href="#tile"/><g class="rest-face"><use href="#gS"/></g>
 <g class="animated-face">
-  <defs><use id="r0x1326t" href="#gR"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.039062;0.056424;0.073785;0.091146;0.108507;0.125868;0.143229;0.16059;0.177951;0.195312;0.212674;0.230035;0.247396;0.264757;0.282118;0.299479;0.31684;0.334201;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gO;#gP;#gQ;#gR;#gR" fill="freeze"/></use><use id="r0x1326b" href="#gR"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.056424;0.073785;0.091146;0.108507;0.125868;0.143229;0.16059;0.177951;0.195312;0.212674;0.230035;0.247396;0.264757;0.282118;0.299479;0.31684;0.334201;0.351562;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gO;#gP;#gQ;#gR;#gR" fill="freeze"/></use></defs>
+  <defs><use id="r0x1326t" href="#gS"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.039062;0.056424;0.073785;0.091146;0.108507;0.125868;0.143229;0.16059;0.177951;0.195312;0.212674;0.230035;0.247396;0.264757;0.282118;0.299479;0.31684;0.334201;0.351562;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gO;#gP;#gQ;#gR;#gS;#gS" fill="freeze"/></use><use id="r0x1326b" href="#gS"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.056424;0.073785;0.091146;0.108507;0.125868;0.143229;0.16059;0.177951;0.195312;0.212674;0.230035;0.247396;0.264757;0.282118;0.299479;0.31684;0.334201;0.351562;0.368924;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gO;#gP;#gQ;#gR;#gS;#gS" fill="freeze"/></use></defs>
   <g clip-path="url(#top-clip)"><use href="#r0x1326t"/></g>
   <g clip-path="url(#bottom-clip)"><use href="#r0x1326b"/></g>
-  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.039062;0.351562;1" values="0;1;0;0" fill="freeze"/>
+  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.039062;0.368924;1" values="0;1;0;0" fill="freeze"/>
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.234375s" repeatCount="18"
+      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.234375s" repeatCount="19"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.234375s" dur="0.10416666666666667s" repeatCount="18" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.234375s" dur="0.10416666666666667s" repeatCount="19" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#r0x1326b"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.234375s" dur="0.10416666666666667s" repeatCount="18" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.234375s" dur="0.10416666666666667s" repeatCount="19" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#r0x1326t"/>
         </g>
       </g>
     </g></g>
   </g>
 </g><use href="#seam"/></g>
-<g transform="translate(1348 0)"><use href="#tile"/><g class="rest-face"><use href="#gD"/></g>
+<g transform="translate(1348 0)"><use href="#tile"/><g class="rest-face"><use href="#gE"/></g>
 <g class="animated-face">
-  <defs><use id="r0x1348t" href="#gD"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.040509;0.05787;0.075231;0.092593;1" values="#g_;#gA;#gB;#gC;#gD;#gD" fill="freeze"/></use><use id="r0x1348b" href="#gD"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.05787;0.075231;0.092593;0.109954;1" values="#g_;#gA;#gB;#gC;#gD;#gD" fill="freeze"/></use></defs>
+  <defs><use id="r0x1348t" href="#gE"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.040509;0.05787;0.075231;0.092593;0.109954;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gE" fill="freeze"/></use><use id="r0x1348b" href="#gE"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.05787;0.075231;0.092593;0.109954;0.127315;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gE" fill="freeze"/></use></defs>
   <g clip-path="url(#top-clip)"><use href="#r0x1348t"/></g>
   <g clip-path="url(#bottom-clip)"><use href="#r0x1348b"/></g>
-  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.040509;0.109954;1" values="0;1;0;0" fill="freeze"/>
+  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.040509;0.127315;1" values="0;1;0;0" fill="freeze"/>
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.243056s" repeatCount="4"
+      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.243056s" repeatCount="5"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.243056s" dur="0.10416666666666667s" repeatCount="4" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.243056s" dur="0.10416666666666667s" repeatCount="5" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#r0x1348b"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.243056s" dur="0.10416666666666667s" repeatCount="4" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.243056s" dur="0.10416666666666667s" repeatCount="5" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#r0x1348t"/>
         </g>
       </g>
     </g></g>
   </g>
 </g><use href="#seam"/></g>
-<g transform="translate(1370 0)"><use href="#tile"/><g class="rest-face"><use href="#gI"/></g>
+<g transform="translate(1370 0)"><use href="#tile"/><g class="rest-face"><use href="#gD"/></g>
 <g class="animated-face">
-  <defs><use id="r0x1370t" href="#gI"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.041956;0.059317;0.076678;0.094039;0.1114;0.128762;0.146123;0.163484;0.180845;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gI" fill="freeze"/></use><use id="r0x1370b" href="#gI"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.059317;0.076678;0.094039;0.1114;0.128762;0.146123;0.163484;0.180845;0.198206;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gI" fill="freeze"/></use></defs>
+  <defs><use id="r0x1370t" href="#gD"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.041956;0.059317;0.076678;0.094039;1" values="#g_;#gA;#gB;#gC;#gD;#gD" fill="freeze"/></use><use id="r0x1370b" href="#gD"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.059317;0.076678;0.094039;0.1114;1" values="#g_;#gA;#gB;#gC;#gD;#gD" fill="freeze"/></use></defs>
   <g clip-path="url(#top-clip)"><use href="#r0x1370t"/></g>
   <g clip-path="url(#bottom-clip)"><use href="#r0x1370b"/></g>
-  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.041956;0.198206;1" values="0;1;0;0" fill="freeze"/>
+  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.041956;0.1114;1" values="0;1;0;0" fill="freeze"/>
     <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.251736s" repeatCount="9"
+      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.251736s" repeatCount="4"
         keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
       <g transform="translate(0 -30)">
         <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.251736s" dur="0.10416666666666667s" repeatCount="9" keyTimes="0;.55;1" values="1;0;0"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.251736s" dur="0.10416666666666667s" repeatCount="4" keyTimes="0;.55;1" values="1;0;0"/>
           <use href="#upper"/><use href="#r0x1370b"/>
         </g>
         <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.251736s" dur="0.10416666666666667s" repeatCount="9" keyTimes="0;.55;1" values="0;1;1"/>
+          <animate attributeName="opacity" calcMode="discrete" begin="0.251736s" dur="0.10416666666666667s" repeatCount="4" keyTimes="0;.55;1" values="0;1;1"/>
           <use href="#lower"/><use href="#r0x1370t"/>
         </g>
       </g>
     </g></g>
   </g>
 </g><use href="#seam"/></g>
-<g transform="translate(1392 0)"><use href="#tile"/><g class="rest-face"><use href="#gN"/></g>
-<g class="animated-face">
-  <defs><use id="r0x1392t" href="#gN"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.043403;0.060764;0.078125;0.095486;0.112847;0.130208;0.147569;0.164931;0.182292;0.199653;0.217014;0.234375;0.251736;0.269097;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gN" fill="freeze"/></use><use id="r0x1392b" href="#gN"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.060764;0.078125;0.095486;0.112847;0.130208;0.147569;0.164931;0.182292;0.199653;0.217014;0.234375;0.251736;0.269097;0.286458;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gH;#gI;#gJ;#gK;#gL;#gM;#gN;#gN" fill="freeze"/></use></defs>
-  <g clip-path="url(#top-clip)"><use href="#r0x1392t"/></g>
-  <g clip-path="url(#bottom-clip)"><use href="#r0x1392b"/></g>
-  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.043403;0.286458;1" values="0;1;0;0" fill="freeze"/>
-    <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.260417s" repeatCount="14"
-        keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
-      <g transform="translate(0 -30)">
-        <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.260417s" dur="0.10416666666666667s" repeatCount="14" keyTimes="0;.55;1" values="1;0;0"/>
-          <use href="#upper"/><use href="#r0x1392b"/>
-        </g>
-        <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.260417s" dur="0.10416666666666667s" repeatCount="14" keyTimes="0;.55;1" values="0;1;1"/>
-          <use href="#lower"/><use href="#r0x1392t"/>
-        </g>
-      </g>
-    </g></g>
-  </g>
-</g><use href="#seam"/></g>
-<g transform="translate(1414 0)"><use href="#tile"/><g class="rest-face"><use href="#gG"/></g>
-<g class="animated-face">
-  <defs><use id="r0x1414t" href="#gG"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.034722;0.052083;0.069444;0.086806;0.104167;0.121528;0.138889;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gG" fill="freeze"/></use><use id="r0x1414b" href="#gG"><animate attributeName="href" calcMode="discrete" dur="6s" keyTimes="0;0.052083;0.069444;0.086806;0.104167;0.121528;0.138889;0.15625;1" values="#g_;#gA;#gB;#gC;#gD;#gE;#gF;#gG;#gG" fill="freeze"/></use></defs>
-  <g clip-path="url(#top-clip)"><use href="#r0x1414t"/></g>
-  <g clip-path="url(#bottom-clip)"><use href="#r0x1414b"/></g>
-  <g opacity="0"><animate attributeName="opacity" calcMode="discrete" dur="6s" keyTimes="0;0.034722;0.15625;1" values="0;1;0;0" fill="freeze"/>
-    <g transform="translate(0 30)"><g>
-      <animateTransform attributeName="transform" type="scale" dur="0.10416666666666667s" begin="0.208333s" repeatCount="7"
-        keyTimes="0;.20;.38;.55;.68;.8;1" values="1 1;1 .98;1 .77;1 0;1 -.65;1 -1;1 -1"/>
-      <g transform="translate(0 -30)">
-        <g clip-path="url(#top-clip)">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.208333s" dur="0.10416666666666667s" repeatCount="7" keyTimes="0;.55;1" values="1;0;0"/>
-          <use href="#upper"/><use href="#r0x1414b"/>
-        </g>
-        <g transform="translate(0 60) scale(1 -1)" clip-path="url(#bottom-clip)" opacity="0">
-          <animate attributeName="opacity" calcMode="discrete" begin="0.208333s" dur="0.10416666666666667s" repeatCount="7" keyTimes="0;.55;1" values="0;1;1"/>
-          <use href="#lower"/><use href="#r0x1414t"/>
-        </g>
-      </g>
-    </g></g>
-  </g>
-</g><use href="#seam"/></g>
+<g transform="translate(1392 0)"><use href="#tile"/><use href="#seam"/></g>
+<g transform="translate(1414 0)"><use href="#tile"/><use href="#seam"/></g>
 <g transform="translate(1436 0)"><use href="#tile"/><use href="#seam"/></g>
 <g transform="translate(1458 0)"><use href="#tile"/><use href="#seam"/></g>
 </g><g transform="translate(27 163.4)"><use href="#dark-pair"/>
-<use class="rest-face" href="#attention-pair"/>
-<g class="motion-lamps" opacity="0"><use href="#attention-pair"/><set attributeName="opacity" to="1" begin="4.418403s" fill="freeze"/></g>
 </g>
 <g data-row="1" aria-label="LX  154 · MUMBAI · 09:50 · 11:45 · E · 1 · E42 · BOARDING" fill="#f8f5e9" transform="translate(0 186) scale(1 .68)">
 <g transform="translate(51 0)"><use href="#tile"/><g class="rest-face"><use href="#gL"/></g>
